@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Billy Jensen</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?   family=Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        .my-container {
+            width:100% !important;
+            width: static;
+            background-image: url(images/foggy_mountain_tinted_01.png);
+            background-color: rgba(0,0,0,1);
+            background-size: cover;
+            background-size: fixed;
+            background-position: center;
+            background-attachment: fixed;            
+            padding-top: 9.2em;
+        }
+        #page{
+            padding-bottom: 5em;
+            position: center;
+        }
+        #about{
+            
+        }
+        #projectInversion{
+/*            background-color: rgba(0,20,40,.5);*/
+        }
+        .bodyOfText{
+            margin: auto;
+            width: 75%;
+            max-width: 1050px
+        }
+        .starter-template {
+
+        }
+        h1{
+/*            text-align: center;*/
+            font-family: 'Rajdhani', sans-serif;
+            color: whitesmoke;
+            font-size: 3em;
+        }
+        h2{
+/*            text-align: center;*/
+            font-family: 'Rajdhani', sans-serif;
+            color: whitesmoke;
+            font-size: 2.5em;
+        }
+        h3{
+            font-family: 'Rajdhani', sans-serif;
+            color: whitesmoke;
+            font-size: 2em;
+        }
+        p{
+            overflow: hidden;
+/*            font-family: 'Josefin Slab', serif;*/
+            color: antiquewhite;
+            font-size: 1em;
+        }
+        .socialIcon{
+            height: 40px;
+            width: 40px;
+            margin-top: 3.75em;
+            margin-left: -.8em;
+            margin-right: 1em;
+            display: none;
+        }
+        #linked-in{
+            background-image: url(images/linked_In_white_transparent.png);
+            background-size: contain;
+        }
+        #linked-in:hover{
+            background-image: url(images/linked_In_white.png);
+            background-size: contain;
+        }
+        #insta{
+            background-image: url(images/insta-white-transparent.png);
+            background-size: contain;
+        }
+        #insta:hover{
+            background-image: url(images/insta-white.png);
+            background-size: contain;
+        }
+        #git{
+            background-image: url(images/github_white_transparent.png);
+            background-size: contain;
+        }
+        #git:hover{
+            background-image: url(images/github_white.png);
+            background-size: contain;
+        }
+        .logo{
+            height:80px;
+            width:80px;
+/*            margin:0px 5px;*/
+            margin-top: 1.5em;
+            margin-left: 1.6em;
+        }
+        #spiral{
+            background-image: url(images/Spiral_white_clearBackground_medium_transparent_1.png);
+            background-size: contain;
+        }
+        #spiral:hover{
+            background-image: url(images/Spiral_white_clearBackground_medium.png);
+            background-size: contain;
+        }
+        .navbar{
+/*            background: rgba(130,130,130,0);*/
+/*            background-color: rgba(0,0,0,1);*/
+/*            min-height: 1em;*/
+            height: 11em;
+/*            box-shadow: 1px 2.5px 5px rgba(40, 40, 40, 0.1);*/
+/*            display: none;*/
+            padding-top: 0;
+            padding-bottom: 1;
+        }
+        .navbar.compressed{
+/*            https://codepen.io/ondrejsvestka/pen/yXJjLj*/
+/*            padding-top: 0;*/
+            height: 6em;
+        }
+        .navbar-header.compressed{
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+            margin-left: .8em;
+        }
+        .logo.compressed{
+            height: 50px;
+            width: 50px;            
+            margin-top: .75em;
+        }
+        .socialIcon.compressed{
+            height: 30px;
+            width: 30px;
+            margin-top: 2em;
+        }
+        .container-fluid.primary.compressed{
+            margin-top: -3.5em;
+        }
+        .container-fluid.seperator.compressed{
+            margin-top: -2.7em;
+        }
+        .container-fluid.secondary.compressed{
+            margin-top: -.25em;
+        }
+        .linkOffset.compressed{
+            padding-top: 9em;
+            margin-top: -9em;
+        }
+        .navbar-header{
+            text-align: center;
+            font-family: 'Poiret One', cursive;
+            color: white;
+            font-size: 4.5em;
+            margin-left:.4em;
+            margin-bottom: 0em;
+/*                        margin-top: 0em;*/
+            display: none;
+
+        }
+        .navbar-header:hover{
+/*            removes underline on hover*/
+            color: ghostwhite;
+            text-decoration: none;
+        }
+        .container-fluid{
+            text-align: center !important;
+            justify-content: center !important;
+            display: inline;
+            line-height: 0.2;
+            margin-top: -.4em;
+            margin-bottom: -0.85em;
+        }
+        .container-fluid.secondary{
+            margin-top: 1.5em;
+            margin-bottom: -.75em;
+        }
+        .container-fluid.seperator{
+            background: url(images/line.png);
+/*            font-family: 'Poiret One', cursive;*/
+/*            color: rgba(250,250,250,.5);*/
+            opacity: .2;
+            height: .1em;
+            width: 20em;
+            margin-top: .75em;
+            margin-bottom: -1em;
+        }
+        .pageLink{
+            font-family: 'Poiret One', cursive;
+/*            font-family: 'Josefin Slab', serif;*/
+            color: rgba(250,250,250,0.6);
+            font-size: 1.5em;
+        }
+        .pageLink:hover{
+            color:white;
+            text-decoration: none;
+        }
+        .sectionLink{
+            margin-top: .75em;
+            font-family: 'Rajdhani', sans-serif;
+/*            color: rgba(0,0,0,0.7);*/
+            color: rgba(250,250,250,.75);
+            font-size: 1em;
+        }
+        .sectionLink:hover{
+/*            color: rgba(200,200,200,1);*/
+/*            color: rgba(0,0,0,1);*/
+            color: rgba(250,250,250,.95);
+        }
+/*
+        .sectionLink:link{
+            color: rgba(250,250,250,.95);
+        }
+*/
+        .linkOffset{
+            padding-top: 11em;
+            margin-top: -11em;
+            position: relative;
+        }
+    </style>
+    
+</head>
+    
+<link rel="shortcut icon" href="images/Spiral_white_circlebackground.png" type="image/x-icon" />
+    
+<body>
+    <nav class="navbar navbar-default fixed-top" role="navigation">
+        <a class="navbar-brand" href="#">
+            <div class="logo" id="spiral">
+            </div>
+        </a>
+        
+        <a class="navbar-header" href="#">Billy Jensen</a>
+        <div class="navbar-nav">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/wjjensen" target="_blank" title="LinkedIn">
+                        <div class="socialIcon" id="linked-in">
+                        </div>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/Wjensen1" target="_blank" title="GitHub">
+                        <div class="socialIcon" id="git">
+                        </div>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/therealbilljensen" target="_blank" title="Instagram">
+                        <div class="socialIcon" id="insta">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+<!--
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationLinks" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+-->
+        
+        <div class="container-fluid primary" id="navigationLinks">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#" class="pageLink">Home</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="pageLink">Games</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="pageLink">Audio</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="container-fluid seperator"></div>
+        
+        <div class="container-fluid secondary">
+            <ul class="list-inline">
+                <li class="list-inline-item active">
+                    <a href="#piLink" class="sectionLink">Project Inversion</a>
+                </li>
+                <li class="list-inline-item active">
+                    <a href="#breakout" class="sectionLink">BreakoutVR</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <main role="main" class="my-container">   
+        <div id="page">
+            <div class="linkOffset compressed" id="top">
+                <br>
+                <div class="bodyOfText">
+                    <h1>Games</h1>
+<!--                    <p>Mission statement and image<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>-->
+                </div>
+            </div>
+            <div class="linkOffset compressed" id="piLink">
+                <div id="projectInversion">
+                    <div class="bodyOfText">
+                        <h3>ProjectInversion</h3>
+                        <p>About Project Inversion, game design doc pdf link, Imbeded video, link to github page/download link <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="linkOffset compressed" id="breakout">
+                <div class="bodyOfText" id="breakoutVr">
+                    <h3>Breakout VR</h3>
+                    <p>about breakout<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    
+</body>
+  
+<script>
+    $(document).ready(function(){
+        function Lerp(start, end, step){
+            var output = step * (end - start) + start;
+            return output;
+        }
+        
+        function CompressVertically(t){
+                        //lerp values
+            //.container-fluid.primary
+            $(".container-fluid.primary").css("margin-top", Lerp(-0.4,-3.5,t) +"em");
+                //margin-top: -.4em : -3.5em;
+            //.container-fluid.seporator
+            $(".container-fluid.seperator").css("margin-top", Lerp(0.75,-2.7,t) +"em");
+                        //margin-top: .75em : -2.7em;
+            //.container-fluid.secondary
+            $(".container-fluid.secondary").css("margin-top", Lerp(1.5,-0.25,t) +"em");
+                        //margin-top: 1.5em : -.25em;
+            //.socialIcon
+            $(".socialIcon").css("height", Lerp(40,30,t) +"px");
+    //            height: 40px - 30px;
+            $(".socialIcon").css("width", Lerp(40,30,t) +"px");
+    //            width: 40px - 30px;
+            $(".socialIcon").css("margin-top", Lerp(3.75,2,t) +"em");
+    //            margin-top: 3.75em - 2em;
+            //.logo
+            $(".logo").css("height", Lerp(80,50,t) +"px");
+    //            height: 80px - 50px;
+            $(".logo").css("width", Lerp(80,50,t) +"px");
+    //            width: 80px - 50px;
+            $(".logo").css("margin-top", Lerp(1.5,.6,t) +"em");
+    //            margin-top: 1.5em - .75em;
+            //.navbar-header
+            $(".navbar-header").css("font-size", Lerp(4.5,1.5,t) +"em");
+                //font-size: 4.5em - 1.5em
+            $(".navbar-header").css("margin-bottom", Lerp(0,1.5,t) +"em");
+    //            margin-bottom: 0em - 1.5em;
+            $(".navbar-header").css("margin-left", Lerp(.4,.8,t) +"em");
+    //            margin-left: .4em - .8em;
+            //.navbar
+            $(".navbar").css("height", Lerp(11,6,t) +"em");
+                //height: 11em - 6em
+        }
+        
+//        console.log("entered ready function");
+        $(document).scroll(function() { 
+//        $(document).on("scroll" function() { 
+//            console.log("entered scroll");
+            var s = $(window).scrollTop(),
+            d = $(document).height(),
+            c = $(window).height();
+            
+            var scrollPercent = (s / (d - c)) * 100;
+            if(isNaN(scrollPercent)){
+//                console.log("NAN");
+                $(".navbar").css("background", "transparent");
+                $(".navbar").css("box-shadow", "1.5px 3px 5px transparent")
+            }else
+            {
+                var targetPercentage = 20;
+                var targetAlpha = .95;
+                var t = scrollPercent * (1/targetPercentage)
+                if(t > 1){
+                    t = 1;
+                }
+                var alpha = t * targetAlpha;
+                var targetShadowAlpha = 0.1;
+                var shadowAlpha = alpha * targetShadowAlpha;
+                $(".navbar").css("background", "rgba(137,136,133," + alpha +")");
+                $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + shadowAlpha + ")");
+                CompressVertically(t);
+            }
+//            console.log("scrollpercentage: " + scrollPercent);
+        });
+    });
+</script>
+    
+</html>
