@@ -277,7 +277,7 @@
     
 </head>
     
-<link rel="shortcut icon" href="images/Spiral_white_clearBackground_medium.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/Spiral_white_circlebackground.png" type="image/x-icon" />
     
 <body>
     <nav class="navbar navbar-default fixed-top" role="navigation">
@@ -395,13 +395,13 @@
         function CompressVertically(t){
                         //lerp values
             //.container-fluid.primary
-            $(".container-fluid.primary").css("margin-top", Lerp(-1,-3.4,t) +"em");
+            $(".container-fluid.primary").css("margin-top", Lerp(-1,-3,t) +"em");
                 //margin-top: -.4em : -3.5em;
             //.container-fluid.seporator
-            $(".container-fluid.seperator").css("margin-top", Lerp(-.9,-3.2,t) +"em");
+            $(".container-fluid.seperator").css("margin-top", Lerp(-.9,-2.8,t) +"em");
                         //margin-top: .75em : -2.7em;
             //.container-fluid.secondary
-            $(".container-fluid.secondary").css("margin-top", Lerp(.25,-1,t) +"em");
+            $(".container-fluid.secondary").css("margin-top", Lerp(.25,-.75,t) +"em");
                         //margin-top: 1.5em : -.25em;
             //.socialIcon
             $(".socialIcon").css("height", Lerp(40,30,t) +"px");
@@ -424,9 +424,9 @@
     //            margin-bottom: 0em - 1.5em;
             $(".navbar-header").css("margin-left", Lerp(.4,.8,t) +"em");
     //            margin-left: .4em - .8em;
-            $(".navbar-header").css("margin-top", Lerp(0,-1.7,t) +"em");
+            $(".navbar-header").css("margin-top", Lerp(0,-1,t) +"em");
             //.navbar
-            $(".navbar").css("height", Lerp(7.3,4.3,t) +"em");
+            $(".navbar").css("height", Lerp(7.3,4,t) +"em");
                 //height: 11em - 6em
         }
         
