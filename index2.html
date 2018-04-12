@@ -54,7 +54,7 @@
         #about{
             
         }
-        #projInv{
+        #projectInversion{
 /*            background-color: rgba(0,20,40,.5);*/
         }
         .bodyOfText{
@@ -64,9 +64,6 @@
         }
         .starter-template {
 
-        }
-        body{
-/*            min-width: 600;*/
         }
         h1{
 /*            text-align: center;*/
@@ -230,9 +227,6 @@
             color:white;
             text-decoration: none;
         }
-        .highlighted{
-            color:white;
-        }
         .sectionLink{
             margin-top: .75em;
             font-family: 'Rajdhani', sans-serif;
@@ -255,9 +249,6 @@
             margin-top: -11em;
             position: relative;
         }
-        .hidden{
-            display: none;
-        }
     </style>
     
 </head>
@@ -266,35 +257,35 @@
     
 <body>
     <nav class="navbar navbar-default fixed-top" role="navigation">
-<!--        <div class="container top">-->
-            <a class="navbar-brand" href="#">
-                <div class="logo" id="spiral">
-                </div>
-            </a>
-            <a class="navbar-header" href="#">Billy Jensen</a>
-            <div class="navbar-nav">
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="https://www.linkedin.com/in/wjjensen" target="_blank" title="LinkedIn">
-                            <div class="socialIcon" id="linked-in">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://github.com/Wjensen1" target="_blank" title="GitHub">
-                            <div class="socialIcon" id="git">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/therealbilljensen" target="_blank" title="Instagram">
-                            <div class="socialIcon" id="insta">
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+        <a class="navbar-brand" href="#">
+            <div class="logo" id="spiral">
             </div>
-<!--        </div>-->
+        </a>
+        
+        <a class="navbar-header" href="#">Billy Jensen</a>
+        <div class="navbar-nav">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/wjjensen" target="_blank" title="LinkedIn">
+                        <div class="socialIcon" id="linked-in">
+                        </div>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/Wjensen1" target="_blank" title="GitHub">
+                        <div class="socialIcon" id="git">
+                        </div>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/therealbilljensen" target="_blank" title="Instagram">
+                        <div class="socialIcon" id="insta">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
 <!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationLinks" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -307,7 +298,7 @@
                     <a href="#" class="pageLink">Home</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#" class="pageLink highlighted">Games</a>
+                    <a href="#" class="pageLink">Games</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="#" class="pageLink">Audio</a>
@@ -320,13 +311,10 @@
         <div class="container-fluid secondary">
             <ul class="list-inline">
                 <li class="list-inline-item active">
-                    <a href="#projectInversion" class="sectionLink">Project Inversion</a>
+                    <a href="#piLink" class="sectionLink">Project Inversion</a>
                 </li>
                 <li class="list-inline-item active">
                     <a href="#breakout" class="sectionLink">BreakoutVR</a>
-                </li>
-                <li class="list-inline-item active">
-                    <a href="#other" class="sectionLink">Other</a>
                 </li>
             </ul>
         </div>
@@ -341,8 +329,8 @@
 <!--                    <p>Mission statement and image<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>-->
                 </div>
             </div>
-            <div class="linkOffset compressed" id="projectInversion">
-                <div id="projInv">
+            <div class="linkOffset compressed" id="piLink">
+                <div id="projectInversion">
                     <div class="bodyOfText">
                         <h3>ProjectInversion</h3>
                         <p>About Project Inversion, game design doc pdf link, Imbeded video, link to github page/download link <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
@@ -353,12 +341,6 @@
                 <div class="bodyOfText" id="breakoutVr">
                     <h3>Breakout VR</h3>
                     <p>about breakout<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-                </div>
-            </div>
-            <div class="linkOffset compressed" id="other">
-                <div class="bodyOfText">
-                    <h3>Other Game</h3>
-                    <p>about other game<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
                 </div>
             </div>
         </div>
@@ -379,14 +361,6 @@
   
 <script>
     $(document).ready(function(){
-//        var h = window.location.hash;
-//        h.replace('#',"");
-//        history.pushState(null,null,h)
-        
-      function remove_hash() {
-        history.replaceState("", document.title, window.location.pathname + window.location.search);
-      }
-        
         function Lerp(start, end, step){
             var output = step * (end - start) + start;
             return output;
@@ -432,25 +406,19 @@
         
         function modifyByScroll(){
             var s = $(window).scrollTop(),
-            d = $(document).height();
-//            c = $(window).height();
-//            console.log("Scroll top: " + s);
-//            console.log("Document height: " + d);
-//            console.log("Window height: " + c);
+            d = $(document).height(),
+            c = $(window).height();
             
-//            var scrollPercent = (s / (d - c)) * 100;
-            var pagePos = (s/d);
-            if(isNaN(pagePos)){
+            var scrollPercent = (s / (d - c)) * 100;
+            if(isNaN(scrollPercent)){
 //                console.log("NAN");
                 $(".navbar").css("background", "transparent");
                 $(".navbar").css("box-shadow", "1.5px 3px 5px transparent")
             }else
             {
-//                var targetPercentage = 20;
+                var targetPercentage = 20;
                 var targetAlpha = .95;
-//                var t = scrollPercent * (1/targetPercentage)
-                var t = 31.25 * pagePos;
-//                console.log("t: " + t);
+                var t = scrollPercent * (1/targetPercentage)
                 if(t > 1){
                     t = 1;
                 }
@@ -463,37 +431,10 @@
             }
         }
         
-        function mobileSwitch(){
-            var w = $(document).width();
-            console.log("width: " + w);
-            var switchPoint = 800;
-            //if document width is lessthan or equal to certain amount
-            
-            if(w <= switchPoint){
-                //add hidden class
-//                $(".top").addClass("hidden");
-                $(".navbar-header").addClass("hidden");
-                $(".socialIcon").addClass("hidden");
-                $(".logo").addClass("hidden");
-            }else{
-                //remove hidden class
-//                $(".top").removeClass("hidden");
-                $(".navbar-header").removeClass("hidden");
-                $(".socialIcon").removeClass("hidden");
-                $(".logo").removeClass("hidden");
-            }
-        }
-        
         modifyByScroll();
-        mobileSwitch();
-        window.addEventListener("resize",mobileSwitch);
         
 //        console.log("entered ready function");
         $(document).scroll(function() { 
-            remove_hash();
-            //log location
-            var loc = window.location.hash;
-            console.log("location: " + loc);
 //        $(document).on("scroll" function() { 
 //            console.log("entered scroll");
             modifyByScroll();
