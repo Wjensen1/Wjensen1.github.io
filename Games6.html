@@ -62,14 +62,12 @@
         .bodyOfText{
             margin: auto;
             width: 75%;
-            max-width: 1050px;
-            
+            max-width: 1050px
         }
         .starter-template {
 
         }
         body{
-/*            min-width: 20%;*/
             min-height: 100%;
             height: auto!important;
             width:100% !important;
@@ -376,12 +374,10 @@
 //        var h = window.location.hash;
 //        h.replace('#',"");
 //        history.pushState(null,null,h)
-        var currentT = 0;
         
-        function remove_hash() 
-        {
-            history.replaceState("", document.title, window.location.pathname + window.location.search);
-        }
+      function remove_hash() {
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
         
         function Lerp(start, end, step){
             var output = step * (end - start) + start;
@@ -425,6 +421,8 @@
             $(".navbar").css("height", Lerp(11,6,t) +"em");
                 //height: 11em - 6em
         }
+      
+
         
         function modifyByScroll(){
             var s = $(window).scrollTop(),
@@ -450,17 +448,12 @@
                 if(t > 1){
                     t = 1;
                 }
-                
-                if(t != currentT)
-                {
-                currentT = t;
                 var alpha = t * targetAlpha;
                 var targetShadowAlpha = 0.1;
                 var shadowAlpha = alpha * targetShadowAlpha;
                 $(".navbar").css("background", "rgba(137,136,133," + alpha +")");
                 $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + shadowAlpha + ")");
                 CompressVertically(t);
-                }
             }
         }
         

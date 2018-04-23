@@ -62,14 +62,12 @@
         .bodyOfText{
             margin: auto;
             width: 75%;
-            max-width: 1050px;
-            
+            max-width: 1050px
         }
         .starter-template {
 
         }
         body{
-/*            min-width: 20%;*/
             min-height: 100%;
             height: auto!important;
             width:100% !important;
@@ -301,10 +299,10 @@
                     <a href="index.html" class="pageLink">Home</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#" class="pageLink highlighted">Games</a>
+                    <a href="Games.html" class="pageLink">Games</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="Audio.html" class="pageLink">Audio</a>
+                    <a href="#" class="pageLink highlighted">Audio</a>
                 </li>
             </ul>
         </div>
@@ -314,13 +312,10 @@
         <div class="container-fluid secondary">
             <ul class="list-inline">
                 <li class="list-inline-item active">
-                    <a href="#projectInversion" class="sectionLink">Project Inversion</a>
+                    <a href="#about" class="sectionLink">temp</a>
                 </li>
                 <li class="list-inline-item active">
-                    <a href="#breakout" class="sectionLink">BreakoutVR</a>
-                </li>
-                <li class="list-inline-item active">
-                    <a href="#other" class="sectionLink">Other</a>
+                    <a href="#contact" class="sectionLink">temp</a>
                 </li>
             </ul>
         </div>
@@ -328,31 +323,19 @@
     
     <main role="main" class="my-container">   
         <div id="page">
-            <div class="linkOffset compressed" id="top">
+            <div class="linkOffset compressed" id="about">
                 <br>
                 <div class="bodyOfText">
-                    <h1>Games</h1>
-<!--                    <p>Mission statement and image<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>-->
+                    <h1>Temp</h1>
+                    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
                 </div>
             </div>
-            <div class="linkOffset compressed" id="projectInversion">
-                <div id="projInv">
+            <div class="linkOffset compressed" id="contact">
+                <div id="contactInfo">
                     <div class="bodyOfText">
-                        <h3>ProjectInversion</h3>
-                        <p>About Project Inversion, game design doc pdf link, Imbeded video, link to github page/download link <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+                        <h3>Temp</h3>
+<!--                        <p>info<br></p>-->
                     </div>
-                </div>
-            </div>
-            <div class="linkOffset compressed" id="breakout">
-                <div class="bodyOfText" id="breakoutVr">
-                    <h3>Breakout VR</h3>
-                    <p>about breakout<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-                </div>
-            </div>
-            <div class="linkOffset compressed" id="other">
-                <div class="bodyOfText">
-                    <h3>Other Game</h3>
-                    <p>about other game<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
                 </div>
             </div>
         </div>
@@ -376,12 +359,10 @@
 //        var h = window.location.hash;
 //        h.replace('#',"");
 //        history.pushState(null,null,h)
-        var currentT = 0;
         
-        function remove_hash() 
-        {
-            history.replaceState("", document.title, window.location.pathname + window.location.search);
-        }
+      function remove_hash() {
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+      }
         
         function Lerp(start, end, step){
             var output = step * (end - start) + start;
@@ -450,17 +431,12 @@
                 if(t > 1){
                     t = 1;
                 }
-                
-                if(t != currentT)
-                {
-                currentT = t;
                 var alpha = t * targetAlpha;
                 var targetShadowAlpha = 0.1;
                 var shadowAlpha = alpha * targetShadowAlpha;
                 $(".navbar").css("background", "rgba(137,136,133," + alpha +")");
                 $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + shadowAlpha + ")");
                 CompressVertically(t);
-                }
             }
         }
         
@@ -488,13 +464,12 @@
         modifyByScroll();
         mobileSwitch();
         window.addEventListener("resize",mobileSwitch);
+        remove_hash();
         
 //        console.log("entered ready function");
         $(document).scroll(function() { 
             remove_hash();
             //log location
-            var loc = window.location.hash;
-            console.log("location: " + loc);
 //        $(document).on("scroll" function() { 
 //            console.log("entered scroll");
             modifyByScroll();
