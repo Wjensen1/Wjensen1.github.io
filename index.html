@@ -62,12 +62,14 @@
         .bodyOfText{
             margin: auto;
             width: 75%;
-            max-width: 1050px
+            max-width: 975px;
+            overflow: hidden;
         }
         .starter-template {
 
         }
         body{
+/*            min-width: 20%;*/
             min-height: 100%;
             height: auto!important;
             width:100% !important;
@@ -82,13 +84,16 @@
             padding-top: 9.2em;
         }
         h1{
+            min-width: 100%;
 /*            text-align: center;*/
             font-family: 'Rajdhani', sans-serif;
-            color: whitesmoke;
+            color: white;
 /*            font-size: 2em;*/
             font-size: 3em;
+            font-style: oblique;
         }
         h2{
+            min-width: 100%;
 /*            text-align: center;*/
             font-family: 'Rajdhani', sans-serif;
             color: whitesmoke;
@@ -96,18 +101,35 @@
             font-size: 2.5em;
         }
         h3{
+            min-width: 100%;
             font-family: 'Rajdhani', sans-serif;
-            color: whitesmoke;
+            color: aliceblue;
 /*            font-size: 1.3em;*/
             font-size: 2em;
+/*            text-decoration: underline;*/
+        }
+        h4{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.75em;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+/*            margin: 1000px 10px;*/
+/*            background-color: black;*/
+/*            padding-bottom: 100px;*/
+        }
+        #pifont{
+            color: skyblue;
         }
         p{
             overflow: hidden;
-            color: antiquewhite;
+            color: ghostwhite;
             font-size: 1em;
         }
         .socialIcon{
-            height: 40px;
             height: 40px;
             width: 40px;
             margin-top: 3.75em;
@@ -202,6 +224,12 @@
             color: ghostwhite;
             text-decoration: none;
         }
+        .container{
+            display: inline;
+        }
+        .text{
+            min-width: 35%;
+        }
         .container-fluid{
             text-align: center !important;
             justify-content: center !important;
@@ -251,6 +279,63 @@
         .hidden{
             display: none;
         }
+        #lootSection{
+            
+        }
+        #gravDemo{
+            width: 339px;
+            height:230px;
+            
+/*            background-color: rgba(50,50,50,.65);*/
+            
+            background-image: url(images/GravDemo_06.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        #gravImg{
+            width: 339px;
+            height:230px;
+            
+            background-image: url(images/Radius.png);
+/*            background-repeat: no-repeat;*/
+            background-size: contain;
+        }
+        .center{
+            position: relative;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin: auto auto;
+            margin: 0 auto;
+        }
+        .right{
+            float:right;
+        }
+        .left{
+            float: left;  
+/*            margin-right: 1em;*/
+            margin-right: 25px;
+        }
+        .buffer{
+            margin-bottom: 50px;
+        }
+        .topBuffer{
+            margin-top: 7.5px;
+        }
+        .indent{
+            margin-left: 25px;
+        }
+        button{
+            background-color: grey;
+/*            border: none;*/
+            border-style: groove;
+            border-color: rgba(0,0,0,.2);
+        }
+        .img{
+            margin-left:25px;
+            margin-bottom: 25px;
+        }
     </style>
     
 </head>
@@ -297,14 +382,16 @@
         <div class="container-fluid primary" id="navigationLinks">
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a href="#" class="pageLink highlighted">Home</a>
+                    <a href="index.html" class="pageLink highlighted">Home</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="Games.html" class="pageLink">Games</a>
                 </li>
+<!--
                 <li class="list-inline-item">
                     <a href="Audio.html" class="pageLink">Audio</a>
                 </li>
+-->
             </ul>
         </div>
         
@@ -324,19 +411,33 @@
     
     <main role="main" class="my-container">   
         <div id="page">
-            <div class="linkOffset compressed" id="about">
+<!--
+            <div class="linkOffset compressed" id="top">
                 <br>
                 <div class="bodyOfText">
-                    <h1>About</h1>
-                    <p>Mission statement and image<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+                    <h1>Games</h1>
                 </div>
             </div>
-            <div class="linkOffset compressed" id="contact">
-                <div id="contactInfo">
-                    <div class="bodyOfText">
-                        <h3>Contact</h3>
-                        <p>info<br></p>
+-->
+            
+            <div class="linkOffset compressed" id="about">
+                <div class="bodyOfText buffer">
+                    <h2>About</h2>
+                    <div class="ImageColumn left">
+
                     </div>
+
+                    <div class="TextColumn">
+                        <p class= "text indent">about text</p>
+                        <p class="text indent">contact info<br><br><br><br><br><br><br><br><br><br><br><br></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="linkOffset compressed" id="contact">
+                <div class="bodyOfText buffer">
+                    <h2>Contact</h2>
+                    <p class="text indent">contact info<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
                 </div>
             </div>
         </div>
@@ -355,6 +456,7 @@
     
 </body>
   
+
 <script>
     $(document).ready(function(){
 //        var h = window.location.hash;
@@ -488,5 +590,7 @@
         });
     });
 </script>
+
+
     
 </html>
