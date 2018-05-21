@@ -38,10 +38,11 @@
     <style type="text/css">
         html{
 /*            overflow: hidden;*/
-            
+            min-width: 500px;
 /*            height: 100%;*/
         }
         body{
+            min-width: 500px;
 /*            overflow-x: visible;*/
         }
         .my-container {
@@ -343,6 +344,11 @@
         .img{
             margin-left:25px;
             margin-bottom: 25px;
+            padding: 100px;
+        }
+        .container.TextColumn{
+/*            min-width: 500px;*/
+            padding: 100px;
         }
     </style>
     
@@ -431,11 +437,11 @@
                     <div class="bodyOfText buffer">
                         <h3>Project Inversion</h3>
                         <div class="ImageColumn left">
-                                <div class="img" id="gravImg"></div>
+                                <div class="img" id="gravImg" ratio=></div>
                                 <div class="img" id="gravDemo"></div>
                         </div>
                         
-                        <div class="TextColumn">
+                        <div class="container TextColumn">
                             <h4 id="pifont">About</h4>
                             <p > Project Inversion is a 2.5d puzzle platformer set in outerspace where the player has the ability to control gravity.
                                 <br><br>
