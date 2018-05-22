@@ -620,10 +620,24 @@
 //            var sectionIDs = ["#projInv","#breakoutVR"];            
             var sectionIDs = ["#projectInversion","#breakout"];            
 
+            var h = $(window).height();
+            var bottomOfPage = pagePosition + (h/docHeight);
+            console.log("pagePos: " + pagePosition);
+            console.log("bottomOfPage: " +bottomOfPage);
+            
             if(pagePosition == 0){
                 //un-highlight all section links
                 for(i=0; i<linkIDs.length;i++){
                     $(linkIDs[i]).removeClass("currentSection");
+                }
+            }else
+            if(bottomOfPage >= 1){
+                for(i=0;i<linkIDs.length;i++){
+                    if(i == linkIDs.length -1){
+                        $(linkIDs[i]).addClass("currentSection");
+                    }else{
+                        $(linkIDs[i]).removeClass("currentSection");   
+                    }
                 }
             }else{
                 
