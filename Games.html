@@ -266,6 +266,11 @@
         .highlighted{
             color:white;
         }
+        .currentSection{
+            color:white;
+            text-decoration-line: line-through;
+            text-decoration-color: rgba(250,250,250,.5);
+        }
         .sectionLink{
             margin-top: .75em;
             font-family: 'Rajdhani', sans-serif;
@@ -409,10 +414,10 @@
         <div class="container-fluid secondary">
             <ul class="list-inline">
                 <li class="list-inline-item active">
-                    <a href="#projectInversion" class="sectionLink">Project Inversion</a>
+                    <a href="#projectInversion" class="sectionLink" id="projectInversionLink">Project Inversion</a>
                 </li>
                 <li class="list-inline-item active">
-                    <a href="#breakout" class="sectionLink">BreakoutVR</a>
+                    <a href="#breakout" class="sectionLink" id="breakoutLink">BreakoutVR</a>
                 </li>
             </ul>
         </div>
@@ -432,7 +437,7 @@
                     <div class="bodyOfText buffer">
                         <h3>Project Inversion</h3>
                         <div class="ImageColumn left">
-                                <div class="img" id="gravImg" ratio=></div>
+                                <div class="img" id="gravImg"></div>
                                 <div class="img" id="gravDemo"></div>
                         </div>
                         
@@ -480,6 +485,9 @@
     
 </body>
   
+<!--manages navbar-->
+<!--vertical and horizontal compression-->
+<!--handles section navigation: url hash cleanup and section link highlight by page position-->
 <script>
     $(document).ready(function(){
 //        var h = window.location.hash;
@@ -487,16 +495,19 @@
 //        history.pushState(null,null,h)
         var currentT = 0;
         
+        //removes added hash from url
         function remove_hash() 
         {
             history.replaceState("", document.title, window.location.pathname + window.location.search);
         }
         
+        //reterns a value between start and end values based on the 0-1 step value
         function Lerp(start, end, step){
             var output = step * (end - start) + start;
             return output;
         }
         
+        //vertically compresses all aspects of navbar based on the 0-1 inputed t/step value 
         function CompressVertically(t){
                         //lerp values
             //.container-fluid.primary
@@ -535,6 +546,7 @@
                 //height: 11em - 6em
         }
         
+        //modifies the navbar based on scroll position
         function modifyByScroll(){
             var s = $(window).scrollTop(),
             d = $(document).height();
@@ -549,8 +561,10 @@
 //                console.log("NAN");
                 $(".navbar").css("background", "transparent");
                 $(".navbar").css("box-shadow", "1.5px 3px 5px transparent")
+                highlightSection(0,d);
             }else
             {
+                highlightSection(pagePos,d);
 //                var targetPercentage = 20;
                 var targetAlpha = .95;
 //                var t = scrollPercent * (1/targetPercentage)
@@ -575,6 +589,7 @@
             }
         }
         
+        //switches between desktop and mobile navbar based on window width
         function mobileSwitch(){
             var w = $(document).width();
             console.log("width: " + w);
@@ -596,24 +611,88 @@
             }
         }
         
+        //highlights section-links by position
+        function highlightSection(pagePosition, docHeight){
+            //link data stored in parrallel arrays
+            //id of link
+            var linkIDs = ["#projectInversionLink","#breakoutLink"];
+            //id of sections linked to
+//            var sectionIDs = ["#projInv","#breakoutVR"];            
+            var sectionIDs = ["#projectInversion","#breakout"];            
+
+            if(pagePosition == 0){
+                //un-highlight all section links
+                for(i=0; i<linkIDs.length;i++){
+                    $(linkIDs[i]).removeClass("currentSection");
+                }
+            }else{
+                
+                //fill elements
+                var elements = [];
+                var i;
+                for(i=0; i < sectionIDs.length;i++)
+                {
+                    elements.push(document.querySelector(sectionIDs[i]));
+                }
+                //fill positions
+                var positions = [];
+                var i;
+                for(i=0;i<elements.length;i++){
+                    var rect = elements[i].getBoundingClientRect();
+                    var y = rect.top;
+                    //when at position ratio is 0
+                    // when bellow position ratio is negative
+                    var ratio = y/docHeight;
+                    //console.log(linkIDs[i] + ": " + ratio);
+                    positions.push(ratio);
+                }
+                
+                
+                var currentSection = -1;
+                
+                for(i=0; i<positions.length;i++){
+                    //if page position is bellow sectionPosition
+                    //set highlightIndex to i
+                    
+                    if(positions[i]<=0.004){
+                        currentSection = i;
+                    }
+                    
+                    if(currentSection != -1 && currentSection != i){
+                        //page position is within the highlightIndex
+                        break;
+                    }
+                }
+                
+                //highlight the currentSection
+                //un-highlight all others
+                for(i=0; i < linkIDs.length;i++){
+                    if(i == currentSection){
+                        //add highlighted to class
+                        $(linkIDs[i]).addClass("currentSection");
+                    }else{
+                        //remove highlihted from class
+                        $(linkIDs[i]).removeClass("currentSection");
+                    }
+                }
+            }
+            
+        }
+        
         modifyByScroll();
         mobileSwitch();
         window.addEventListener("resize",mobileSwitch);
+        window.addEventListener("resize",modifyByScroll);
         
-//        console.log("entered ready function");
+        //run on document scroll
         $(document).scroll(function() { 
             remove_hash();
             //log location
             var loc = window.location.hash;
             console.log("location: " + loc);
-//        $(document).on("scroll" function() { 
-//            console.log("entered scroll");
             modifyByScroll();
-//            console.log("scrollpercentage: " + scrollPercent);
         });
     });
 </script>
-
-
     
 </html>
