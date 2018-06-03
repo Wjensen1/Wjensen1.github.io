@@ -80,19 +80,13 @@
             height: auto!important;
             width:100% !important;
             width: static;
-/*            background-color: dimgray;*/
-/*            background-color: rgba(107,105,105,.9);*/
-/*            background-color: rgba(130,129,129,1);*/
-/*            background-color: rgba(130,129,129,1);*/
-/*            background: linear-gradient(to bottom,rgba(115,112,112,1),rgba(80,80,85,1));*/
-            background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(81,80,80,1)), rgba(130,129,129,1);
-/*            background: radial-gradient(rgba(100,99,99,1),rgba(80,80,85,1));*/
-/*            background: linear-gradient(to bottom,rgba(51,50,50,1),rgba(20,20,22,1));*/
-/*            background-image: url(images/foggy_mountain_tinted_01_comp03.png);*/
+            background-color: dimgray;
+/*            background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(81,80,80,1)), rgba(130,129,129,1);*/
+            background-image: url(images/foggy_mountain_tinted_01_comp03.png);
             
-/*            background-size: cover;*/
-/*            background-size: fixed;*/
-/*            background-position: center;*/
+            background-size: cover;
+            background-size: fixed;
+            background-position: center;
             background-attachment: fixed;            
 /*            padding-top: 6em;*/
             padding-top: 9.2em;
@@ -127,6 +121,19 @@
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.75em;
         }
+        h5{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4em;
+        }
+        h6{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2em;
+/*            color: rgba(200,240,255,.6);*/
+            color: rgba(250,250,250,.6);
+            font-style: italic;
+        }
         ul{
             list-style-type: none;
         }
@@ -137,6 +144,9 @@
         }
         #pifont{
             color: skyblue;
+        }
+        #pifont2{
+            color: lightblue;
         }
         p{
             overflow: hidden;
@@ -447,8 +457,12 @@
                     <div class="bodyOfText buffer">
                         <h3>Project Inversion</h3>
                         <div class="ImageColumn left">
-                                <div class="img" id="gravImg"></div>
-                                <div class="img" id="gravDemo"></div>
+                            <div class="img" id="gravImg"></div>
+                            <div class="img" id="gravDemo"></div>
+                            <div class="img" style="background-image:url(images/ropeDemo_c00.gif)" id="gravDemo"></div>
+                            <div class="img" id="gravDemo" style="background-image:url(images/ropeDemo_rc00.gif)"></div>
+                            <div class="img" id="gravDemo" style="background-image:url(images/ropeDemo_rcc00.gif)"></div>
+                            <div class="img" id="gravDemo" style="background-image:url(images/ropeDemo_r01.gif)"></div>
                         </div>
                         
                         <div class="container TextColumn">
@@ -464,8 +478,18 @@
                             </p>
                             <h4 id="pifont">Grapple System</h4>
                             <p>
-                                In addition to the gravity controls the player also has a grapple gun at their disposal.  
+                                Complementing the player's  gravity mechanic they also have control over a grappling gun.  This allows the player to affect their character separately from the objects around them and redirect the forces gravity has on the character.
                             </p>
+                            <h5 id="pifont2"> The Base Physics</h5>
+                            <p>The initial step in designing the rope/grapple system was to get the applied forces of the rope working first before working on how the rope itself would be rendered. This ensures that the end result will function exactly how intended and the rendering of the rope can be done on top of this system. The base system looks at the player position, rope length, and the point the rope is grappled to. Using these and the ropes elasticity the correct forces to simulate the effects of the rope can be applied to the player.</p>
+                            <h5 id="pifont2"> Rendering</h5>
+                            <h6>Bezier Curve</h6>
+                            <p>At first I attempted to render a semi-random Bezier curve between the player and the grappled point to simulate the rope.  This method used the rope length and the distance between the player and grappled point to modify the Bezier curve's control points. However, while in some situations this solution looked okay, it came across fairly stiff and fake in others, especially when the player shifted the direction of gravity.</p>
+                            <h6>Joint Chain</h6>
+                            <p>The other approach was to use a more physics based approach for rendering the rope. Using a series of linked joints who respond to the gravitational forces, collisions, and forces between the individual joints you can create a fairly believable chain.  The system however does not look like a rope, even when greatly increasing the number of joints in the series which drastically decreases the performance it still looks fairly rigid/stiff.</p>
+                            <h6>The Solution</h6>
+                            <p>To achieve the desired fluid rope like appearance in a performance light system a combination of the two methods was used. What determines the underlying physics of the rope is a hidden low count joint chain. That underlying chain is then used as control points in rendering a Bezier curve.
+                            <br>While the underlying joint chain allows the rope to interact with gravity and the internal forces and bends in the rope, the newly rendered curve rope now needs to be able to interact with the environment. A series of cylinder colliders is then generated from the rendered Bezier curve as the last layer in the grapple system.</p>
                         </div>
                     </div>
                 </div>
