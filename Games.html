@@ -309,27 +309,6 @@
         .hidden{
             display: none;
         }
-        #lootSection{
-            
-        }
-        #gravDemo{
-            width: 339px;
-            height:230px;
-            
-/*            background-color: rgba(50,50,50,.65);*/
-            
-            background-image: url(images/GravDemo_06.gif);
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-        #gravImg{
-            width: 339px;
-            height:230px;
-            
-            background-image: url(images/Radius.png);
-/*            background-repeat: no-repeat;*/
-            background-size: contain;
-        }
         .center{
             position: relative;
             align-content: center;
@@ -362,10 +341,56 @@
             border-style: groove;
             border-color: rgba(0,0,0,.2);
         }
+        
         .img{
             margin-left:25px;
             margin-bottom: 25px;
             padding: 100px;
+        }
+        .box{
+            width: 339px;
+            height:230px;
+            background: black;
+        }
+        .overlay{
+            position: relative;
+            background-repeat: repeat;
+            background-size: contain;
+            opacity:1;
+        }
+        .overlay:after{
+            position: absolute;
+            content: '';
+            color: white;
+            text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0;            
+        }
+        .overlay:hover:after{
+            opacity: .5;
+        }
+        .overlay:hover > .imageText{
+            opacity:1;
+        }
+        .imageText{
+            position:relative;
+            color: white;
+            opacity: 0;
+            text-align: center;
+            font-size: 2em;
+/*            overflow: visible;*/
+/*            display: block;*/
+            z-index: 2;
+        }
+        .imageText.note{
+            font-size: 1em;
+            width:150px;
+            margin-left: -5px;
+            font-style: italic;
         }
         .container.TextColumn{
 /*            min-width: 500px;*/
@@ -407,12 +432,6 @@
                     </li>
                 </ul>
             </div>
-<!--        </div>-->
-<!--
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationLinks" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
--->
         
         <div class="container-fluid primary" id="navigationLinks">
             <ul class="list-inline">
@@ -456,12 +475,31 @@
                     <div class="bodyOfText buffer">
                         <h3>Project Inversion</h3>
                         <div class="ImageColumn left">
-                            <div class="img" id="gravImg"></div>
-                            <div class="img" id="gravDemo"></div>
-                            <div class="img" style="background-image:url(images/ropeDemo_c00.gif)" id="gravDemo"></div>
-                            <div class="img" id="gravDemo" style="background-image:url(images/ropeDemo_rc00.gif)"></div>
-                            <div class="img" id="gravDemo" style="background-image:url(images/ropeDemo_rcc00.gif)"></div>
-                            <div class="img" id="gravDemo" style="background-image:url(images/ropeDemo_r01.gif)"></div>
+                            <div class="img box overlay" style="background-image: url(images/GravDemo_06.gif)">
+                                <p class="imageText" style="margin-top:-28px">Radial Gravity</p>
+                            </div>
+                            
+                            <div class="img box overlay" style="background-image: url(images/Radius.png)">
+                                <p class="imageText" style="margin-top:-28px">Area of Effect</p>
+                            </div>
+                                
+                            <div class="img box overlay" style="background-image: url(images/ropeDemo_c00.gif)">
+                                <p class="imageText" style="margin-top:-28px">Joint Chain</p>
+                            </div>
+                            
+                            <div class="img box overlay" style="background-image: url(images/ropeDemo_rc00.gif)">
+                                <p class="imageText" style="margin-top:-28px">Bezier Curve</p>
+                                <p class="imageText note" style="margin-top:-20px">(rendered from joints)</p>
+                            </div>
+                            
+                            <div class="img box overlay" style="background-image: url(images/ropeDemo_rcc00.gif)">
+                                <p class="imageText" style="margin-top:-28px">Cylinder Colliders</p>
+                                <p class="imageText note" style="margin-top:-20px">(rendered from curve)</p>
+                            </div>
+                            
+                            <div class="img box overlay" style="background-image: url(images/ropeDemo_r01.gif)">
+                                <p class="imageText" style="margin-top:-28px">Rendered Rope</p>
+                            </div>
                         </div>
                         
                         <div class="container TextColumn">
@@ -473,7 +511,7 @@
                             <p>
                                 In the games initial concept, the player controlled the direction of gravity for the entire level. However that system did not lend itself to a clean multiplayer build.  Instead the mechanic was rebuilt as a radial gravity-control system allowing multiple players to control gravity at the same time.
                                 <br><br>
-                                The system works with an inner and outer circle of effect.  Within the inner circle the full 9.8m/s^2 gravitational acceleration is applied. Within the outer circle an acceleration ranging from 9.8m/s^2 to 0m/s^2 is applied to objects based on their distance from the player.
+                                The system works with an <span id="img1">inner and outer circle of effect.</span>  Within the inner circle the full 9.8m/s^2 gravitational acceleration is applied. Within the outer circle an acceleration ranging from 9.8m/s^2 to 0m/s^2 is applied to objects based on their distance from the player.
                                 <br><br>
                             </p>
                             <h4 id="pifont">Grapple System</h4>
