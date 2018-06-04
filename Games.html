@@ -466,7 +466,7 @@
                         
                         <div class="container TextColumn">
                             <h4 id="pifont">About</h4>
-                            <p > Project Inversion is a 2.5d puzzle platformer set in outerspace in which the player has the ability to control gravity.
+                            <p > Project Inversion is a 2.5d puzzle platformer set in outerspace built around a gravity control mechanic.
                                 <br><br>
                             </p>
                             <h4 id="pifont">Radial Gravity</h4>
@@ -474,6 +474,7 @@
                                 In the games initial concept, the player controlled the direction of gravity for the entire level. However that system did not lend itself to a clean multiplayer build.  Instead the mechanic was rebuilt as a radial gravity-control system allowing multiple players to control gravity at the same time.
                                 <br><br>
                                 The system works with an inner and outer circle of effect.  Within the inner circle the full 9.8m/s^2 gravitational acceleration is applied. Within the outer circle an acceleration ranging from 9.8m/s^2 to 0m/s^2 is applied to objects based on their distance from the player.
+                                <br><br>
                             </p>
                             <h4 id="pifont">Grapple System</h4>
                             <p>
@@ -488,7 +489,9 @@
                             <p>The other approach was to use a more physics based approach for rendering the rope. Using a series of linked joints who respond to the gravitational forces, collisions, and forces between the individual joints you can create a fairly believable chain.  The system however does not look like a rope, even when greatly increasing the number of joints in the series which drastically decreases the performance it still looks fairly rigid/stiff.</p>
                             <h6>The Solution</h6>
                             <p>To achieve the desired fluid rope like appearance in a performance light system a combination of the two methods was used. What determines the underlying physics of the rope is a hidden low count joint chain. That underlying chain is then used as control points in rendering a Bezier curve.
-                            <br>While the underlying joint chain allows the rope to interact with gravity and the internal forces and bends in the rope, the newly rendered curve rope now needs to be able to interact with the environment. A series of cylinder colliders is then generated from the rendered Bezier curve as the last layer in the grapple system.</p>
+                            <br></p>
+                            <h5 id="pifont2">Colliders</h5>
+                            <p>While the underlying joint chain allows the rope to interact with gravity and manages the internal forces/bends within the rope, the newly rendered curve rope now needs to be able to interact with the environment. The final layer of the system is a series of cylinder colliders that resize as the rope compresses and stretches is then generated from the rendered Bezier curve.</p>
                         </div>
                     </div>
                 </div>
