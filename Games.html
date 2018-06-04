@@ -638,30 +638,25 @@
                 highlightSection(0,d);
             }else
             {
-                //highlights/crossesOut the page section link based on the position on the page
                 highlightSection(pagePos,d);
-
+//                var targetPercentage = 20;
+                var targetAlpha = .95;
+//                var t = scrollPercent * (1/targetPercentage)
                 var t = 31.25 * pagePos;
-                
-                //limit t
+//                console.log("t: " + t);
                 if(t > 1){
                     t = 1;
                 }else if (t < 0){
                     t = 0;
                 }
                 
-                //checks if navbar needs to be adjusted
                 if(t != currentT)
                 {
-                //adjust the navbar's shadow
-                var targetAlpha = .95;
                 var alpha = t * targetAlpha;
                 var targetShadowAlpha = 0.1;
                 var shadowAlpha = alpha * targetShadowAlpha;
                 $(".navbar").css("background", "rgba(137,136,133," + alpha +")");
                 $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + shadowAlpha + ")");
-                    
-                //adjust elements of navbar with t value
                 CompressVertically(t);
                 currentT = t;
                 }
@@ -677,11 +672,13 @@
             
             if(w <= switchPoint){
                 //add hidden class
+//                $(".top").addClass("hidden");
                 $(".navbar-header").addClass("hidden");
                 $(".socialIcon").addClass("hidden");
                 $(".logo").addClass("hidden");
             }else{
                 //remove hidden class
+//                $(".top").removeClass("hidden");
                 $(".navbar-header").removeClass("hidden");
                 $(".socialIcon").removeClass("hidden");
                 $(".logo").removeClass("hidden");
