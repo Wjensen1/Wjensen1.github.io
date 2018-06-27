@@ -13,24 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     
-<!--     Google Analytics -->
-<!--
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-93185909-1', 'auto');
-      ga('send', 'pageview');
 
-      var trackOutboundLink = function(url) {
-        ga('send', 'event', 'outbound', 'click', url, {
-          'transport': 'beacon',
-          'hitCallback': function(){document.location = url;}
-        });
-      }
-    </script>
--->
 <!--    "@type": "Organization",-->
     
 <!--
@@ -321,6 +304,8 @@
         }
         .sectionLink:hover{
             color: rgba(250,250,250,.95);
+/*            text-decoration: overline;*/
+            text-decoration-color: rgba(250,250,250,.75);
         }
         .linkOffset{
             padding-top: 11em;
@@ -417,6 +402,9 @@
 /*            min-width: 500px;*/
             padding: 100px;
         }
+        .indent{
+            padding-left: 20px;
+        }
     </style>
     
 </head>
@@ -424,7 +412,7 @@
 <link rel="shortcut icon" href="images/favicon_whiteBackground.png" type="image/x-icon" />
     
 <body>
-    <nav class="navbar navbar-default fixed-top" role="navigation">
+    <nav class="navbar navbar-default fixed-top hidden" role="navigation">
 <!--        <div class="container top">-->
             <a class="navbar-brand" href="#">
                 <div class="logo" id="spiral">
@@ -526,31 +514,31 @@
                         <div class="container TextColumn">
                             <h4 id="pifont">About</h4>
                             <p > Project Inversion is a 2.5d puzzle platformer set in outerspace built around a gravity control mechanic.
-                                <br><br>
+                                <br>
                             </p>
                             <h4 id="pifont">Radial Gravity</h4>
-                            <p>
+                            <p class="indent">
                                 In the games initial concept, the player controlled the direction of gravity for the entire level. However that system did not lend itself to a clean multiplayer build.  Instead the mechanic was rebuilt as a radial gravity-control system allowing multiple players to control gravity at the same time.
                                 <br><br>
                                 The system works with an <span id="img1">inner and outer circle of effect.</span>  Within the inner circle the full 9.8m/s^2 gravitational acceleration is applied. Within the outer circle an acceleration ranging from 9.8m/s^2 to 0m/s^2 is applied to objects based on their distance from the player.
                                 <br><br>
                             </p>
                             <h4 id="pifont">Grapple System</h4>
-                            <p>
+                            <p class="indent">
                                 Complementing the player's  gravity mechanic they also have control over a grappling gun.  This allows the player to affect their character separately from the objects around them and redirect the forces gravity has on the character.
                             </p>
                             <h5 id="pifont2"> The Base Physics</h5>
-                            <p>The initial step in designing the rope/grapple system was to get the applied forces of the rope working first before working on how the rope itself would be rendered. This ensures that the end result will function exactly how intended and the rendering of the rope can be done on top of this system. The base system looks at the player position, rope length, and the point the rope is grappled to. Using these and the ropes elasticity the correct forces to simulate the effects of the rope can be applied to the player.</p>
+                            <p class="indent">The initial step in designing the rope/grapple system was to get the applied forces of the rope working first before working on how the rope itself would be rendered. This ensures that the end result will function exactly how intended and the rendering of the rope can be done on top of this system. The base system looks at the player position, rope length, and the point the rope is grappled to. Using these and the ropes elasticity the correct forces to simulate the effects of the rope can be applied to the player.</p>
                             <h5 id="pifont2"> Rendering</h5>
                             <h6>Bezier Curve</h6>
-                            <p>At first I attempted to render a semi-random Bezier curve between the player and the grappled point to simulate the rope.  This method used the rope length and the distance between the player and grappled point to modify the Bezier curve's control points. However, while in some situations this solution looked okay, it came across fairly stiff and fake in others, especially when the player shifted the direction of gravity.</p>
-                            <h6>Joint Chain</h6>
-                            <p>The other approach was to use a more physics based approach for rendering the rope. Using a series of linked joints who respond to the gravitational forces, collisions, and forces between the individual joints you can create a fairly believable chain.  The system however does not look like a rope, even when greatly increasing the number of joints in the series which drastically decreases the performance it still looks fairly rigid/stiff.</p>
+                            <p class="indent">At first I attempted to render a semi-random Bezier curve between the player and the grappled point to simulate the rope.  This method used the rope length and the distance between the player and grappled point to modify the Bezier curve's control points. However, while in some situations this solution looked okay, it came across fairly stiff and fake in others, especially when the player shifted the direction of gravity.</p>
+                            <h6 class="indent">Joint Chain</h6>
+                            <p  class="indent">The other approach was to use a more physics based approach for rendering the rope. Using a series of linked joints who respond to the gravitational forces, collisions, and forces between the individual joints you can create a fairly believable chain.  The system however does not look like a rope, even when greatly increasing the number of joints in the series which drastically decreases the performance it still looks fairly rigid/stiff.</p>
                             <h6>The Solution</h6>
-                            <p>To achieve the desired fluid rope like appearance in a performance light system a combination of the two methods was used. What determines the underlying physics of the rope is a hidden low count joint chain. That underlying chain is then used as control points in rendering a Bezier curve.
+                            <p class="indent">To achieve the desired fluid rope like appearance in a performance light system a combination of the two methods was used. What determines the underlying physics of the rope is a hidden low count joint chain. That underlying chain is then used as control points in rendering a Bezier curve.
                             <br></p>
                             <h5 id="pifont2">Colliders</h5>
-                            <p>While the underlying joint chain allows the rope to interact with gravity and manages the internal forces/bends within the rope, the newly rendered curve rope now needs to be able to interact with the environment. The final layer of the system is a series of cylinder colliders that resize as the rope compresses and stretches is then generated from the rendered Bezier curve.</p>
+                            <p class="indent">While the underlying joint chain allows the rope to interact with gravity and manages the internal forces/bends within the rope, the newly rendered curve rope now needs to be able to interact with the environment. The final layer of the system is a series of cylinder colliders that resize as the rope compresses and stretches is then generated from the rendered Bezier curve.</p>
                         </div>
                     </div>
                 </div>
@@ -560,7 +548,51 @@
                 <div id="breakoutVr">
                     <div class="bodyOfText buffer">
                         <h3>Breakout VR</h3>
-                        <p class="text indent">about breakout<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+                        <p>Bringing the classic brick-breaker game mode into virtual reality, Breakout VR is a score based, endless wave arcade game bringing the social aspect of bowling/arcades to VR.
+                        <br><br>
+                        The goal of the game is to progress through as many levels as possible racking up a high score.  YOu must destroy all the blocks to reach the next level and keep the ball from touching the red plasma field behind you.
+                        <br></p>
+                        <h4 id="pifont"> Multi-Scoreboard System</h4>
+                        <p class="text indent">In Breakout-VR there are two different types of scoreboards that track the top 10 scores.  The first is the Master scoreboard which is filled with the top scores taken from all other past and present scoreboards. The second are custom boards which the player can create and manage from the menu.  The custom boards store the top 10 scores achieved while that specific scoreboard is selected as the current board.  This allows players to compete with eachother locally by creating a new scoreboard for a specific group or event starting the competition from scratch.
+                        <br><br>
+                        The goal of this system is to promote a more social local play where even though players are in solo matches they can still compete with one another. While this works well enough I think having specific gamemodes made for turn-taking local multiplayer would be better, at least to have in addition to the multi-board system. 
+                            
+                        <br><br></p>
+                        <h4 id="pifont">Menu System</h4>
+                        <p class="text indent">Due to the spacial presence and the positional tracking of Virtual Reality the UI systems must be developed specifically for the platform. The UI should not take the player out of immersion.  It should take advantage of the unique characteristics of VR and feel like another feature of the game.
+                        <br><br>
+                        In Breakout the menu appears as a hologram over whichever controller opens it. All menu navigation is done with the trackpad, mimicing standard touchscreen controls. This allows checking the menu to be more similar to checking ones smartphone rather than interupting the game with a large fixred 2D screen the player must navigate with pointing and clicking.
+                            
+<!--                            To navigate within the menu the player can vertically scroll through with the touchpad and select the centered button by pressing it or scrolling horizontally.-->
+                            
+<!--                        Menu fixed to controller, touchpad as input. No pointing touching and you control where it is-->
+                        </p>   
+                        <h5 id="pifont2">Menu Builder</h5>
+                        <p class="text indent">
+                        In order to save time and effort of rebuilding and arranging the assets for the menu everytime it gets updated I generated/setup the menu assets from a text file outlining all the different buttons and submenus.  This proved especially useful when prototyping, slowly adding and testing different sections to the menu.
+                        <br><br></p>
+                        
+                        <h4 id="pifont">Blocks</h4>
+                        <h5 id="pifont2">Block Types</h5>
+                        <p class="text indent"><i>Normal</i> - simple purple block that shatters on ball impact<br>
+                        Explosive - red block that explodes on impact damaging blocks around it<br>
+                        <i>Perk</i> - yellow block that drops a random perk on impact (+1 health/+1 bullet in paddle)<br>
+                        <i>Turret</i> - a block that tracks the player, firing lasers bolts which can be blocked or dodged<br>
+                        <i>Extra Ball</i> - a blue block that spawns a second ball on impact</p>
+                        <h5 id="pifont2">Map Generation</h5>
+                        <p class="text indent">The layout of the individual levels work by generating a random string/array based on the available amounts of each block types and the playable depths based on the given level. This system worked well enough but didn't scale very well, however that was also due to the lack of block variety and other methods to increase the intensity of the levels as the player progressed.
+                        <br><br></p>
+<!--
+                        <h4 id="pifont">Take Away</h4>
+                        <p class="text indent" style="color: red;">
+                            intensity and dificulty don't scale well: could modify the velocity range of the ball based on the level. Or other factors to get force the player to move more like more types of turrets, lasers they need to dodge, or other objectives to worry about.
+                            <br><br>
+                            In order to encourage a better/easier experience for local multiplayer a local multiplayer specific gamemode would be good. Especially one that could easily setup and started from the computer adding all the different player names to the match.
+                            <br><br>
+                            menu - takeAway
+                            
+                        <br><br></p>
+-->
                     </div>
                 </div>
             </div>
@@ -588,7 +620,20 @@
 //        var h = window.location.hash;
 //        h.replace('#',"");
 //        history.pushState(null,null,h)
-        var currentT = 0;
+        //isCompressed/Compressing
+        var pagePos = null;
+        var deltaPagePos = null;
+        var prevScrollTime = null;
+        var currentScrollTime = null;
+        var isCompressed = null;
+        
+//        var navStates = Object.freeze({"open":1,"compressed":2,"opening":3,"compressing":4});
+        var navAnimation = null;
+        var previousFrame = null;
+        var animationT = 0;
+        
+//        var currentT = 0;
+        
         
         //removes added hash from url
         function remove_hash() 
@@ -602,9 +647,91 @@
             return output;
         }
         
+
+        function SetNavState(compressed){
+            if(isCompressed != null && compressed != isCompressed){
+                isCompressed = compressed;
+                //stop anim
+                if(navAnimation != null){
+                    clearInterval(navAnimation);
+                    navAnimation = null;
+                }
+                
+                var speed = Math.abs(deltaPagePos * (currentScrollTime - prevScrollTime));
+                
+                totalAnimTime = (-1250 * speed) + 237.5;
+                
+                //limit
+                if(totalAnimTime < 50){
+                    totalAnimTime = 50;
+                }else if(totalAnimTime > 200){
+                    totalAnimTime = 200;
+                }
+                
+                
+                previousFrame = Date.now();
+                navAnimation = setInterval(function() {AnimateNavbar(compressed, totalAnimTime);}, 0);
+            }
+        }
+        
+        function AnimateNavbar(isCompressing, totalAnimTime){
+            
+            //in MILLIseconds
+        
+            var directionFactor;
+            
+            if(isCompressing){
+                directionFactor = 1;
+            }else{
+                directionFactor = -1;
+            }
+
+            
+            var thisTime = Date.now();
+            var deltaTime = (thisTime - previousFrame);
+
+            previousFrame = thisTime;
+            
+            //animate by delta time
+            animationT = animationT + (deltaTime/totalAnimTime) * directionFactor;
+            
+            //limit
+            if(!isCompressing && animationT <= 0){
+                
+                animationT == 0;
+                CompressVertically(animationT);
+
+                //end routine
+                clearInterval(navAnimation);
+                navAnimation = null;
+//                console.log("fully DE-compressed")
+                return;
+            }else if(isCompressing > 0 && animationT >= 1){
+                animationT = 1;
+                CompressVertically(animationT);
+                
+                //end routine
+                clearInterval(navAnimation);
+                navAnimation = null;
+//                console.log("fully Compressed");
+                return;
+            }
+            
+            //apply
+            CompressVertically(animationT);
+            
+        }
+        
         //vertically compresses all aspects of navbar based on the 0-1 inputed t/step value 
         function CompressVertically(t){
-                        //lerp values
+            
+            if(t > 1){
+                t=1;
+            }else if (t < 0){
+                t=0;
+            }
+            
+            //lerp values
             //.container-fluid.primary
             $(".container-fluid.primary").css("margin-top", Lerp(-0.4,-3.5,t) +"em");
                 //margin-top: -.4em : -3.5em;
@@ -639,60 +766,76 @@
             //.navbar
             $(".navbar").css("height", Lerp(11,6,t) +"em");
                 //height: 11em - 6em
+            
+            //modify background alpha and shadow
+            $(".navbar").css("background", "rgba(137,136,133," + (t * 0.95) +")");
+            $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + (t * 0.09) + ")");
         }
         
         //modifies the navbar based on scroll position
         function modifyByScroll(){
+//            var position = window.pageYOffset;
+//            
+//            console.log("POSITION: "+position);
+            
             var s = $(window).scrollTop(),
             d = $(document).height();
-//            c = $(window).height();
-//            console.log("Scroll top: " + s);
-//            console.log("Document height: " + d);
-//            console.log("Window height: " + c);
+
+            var prevPage = pagePos;
+            pagePos = (s/d);
+            if(prevScrollTime == null){
+                currentScrollTime = Date.now();
+                prevScrollTime = currentScrollTime;
+                
+            }else{
+                prevScrollTime = currentScrollTime;
+                currentScrollTime = Date.now();
+            }
+            deltaPagePos = pagePos - prevPage;
             
-//            var scrollPercent = (s / (d - c)) * 100;
-            var pagePos = (s/d);
             if(isNaN(pagePos)){
-//                console.log("NAN");
-                $(".navbar").css("background", "transparent");
-                $(".navbar").css("box-shadow", "1.5px 3px 5px transparent")
+                console.log("NAN");
+                SetNavState(false);
                 highlightSection(0,d);
             }else
             {
                 //highlights/crossesOut the page section link based on the position on the page
                 highlightSection(pagePos,d);
-
-                var t = 31.25 * pagePos;
                 
                 //limit t
-                if(t > 1){
-                    t = 1;
-                }else if (t < 0){
-                    t = 0;
-                }
-                
-                //checks if navbar needs to be adjusted
-                if(t != currentT)
-                {
-                //adjust the navbar's shadow
-                var targetAlpha = .95;
-                var alpha = t * targetAlpha;
-                var targetShadowAlpha = 0.1;
-                var shadowAlpha = alpha * targetShadowAlpha;
-                $(".navbar").css("background", "rgba(137,136,133," + alpha +")");
-                $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + shadowAlpha + ")");
-                    
-                //adjust elements of navbar with t value
-                CompressVertically(t);
-                currentT = t;
-                }
+                if(isCompressed != null){
+                    var t = 31.25 * pagePos;
+                    if(t >= 0.1){
+                        SetNavState(true);
+                    }else if (t < 0.1){
+                        SetNavState(false);
+                    }
+                } 
             }
+        }
+        
+        //on page load sets starting navbar compression
+        function setStartingNavState(){
+            var t = 31.25 * pagePos;
+            isCompressed = false;
+            if(t >= 0.1){
+                t = 1; 
+                isCompressed = true;
+            }else if (t < 0.1){
+                t = 0;
+                isCompressed = false;
+            }
+            
+            animationT = t;
+            CompressVertically(t);
+            
+            $(".navbar-default").removeClass("hidden");
         }
         
         //switches between desktop and mobile navbar based on window width
         function mobileSwitch(){
             var w = $(document).width();
-            console.log("width: " + w);
+//            console.log("width: " + w);
             var switchPoint = 800;
             //if document width is lessthan or equal to certain amount
             
@@ -720,8 +863,8 @@
 
             var h = $(window).height();
             var bottomOfPage = pagePosition + (h/docHeight);
-            console.log("pagePos: " + pagePosition);
-            console.log("bottomOfPage: " +bottomOfPage);
+//            console.log("pagePos: " + pagePosition);
+//            console.log("bottomOfPage: " +bottomOfPage);
             
             if(pagePosition == 0){
                 //un-highlight all section links
@@ -792,16 +935,17 @@
         }
         
         modifyByScroll();
+        setStartingNavState();
         mobileSwitch();
         window.addEventListener("resize",mobileSwitch);
         window.addEventListener("resize",modifyByScroll);
         
         //run on document scroll
         $(document).scroll(function() { 
-            remove_hash();
+//            remove_hash();
             //log location
             var loc = window.location.hash;
-            console.log("location: " + loc);
+//            console.log("location: " + loc);
             modifyByScroll();
         });
     });
