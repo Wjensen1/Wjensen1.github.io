@@ -166,27 +166,27 @@
             margin-right: 1em;
         }
         #linked-in{
-            background-image: url(images/linked_In_white_transparent.png);
+            background-image: url(images/icons/linkedIn_clear.png);
             background-size: contain;
         }
         #linked-in:hover{
-            background-image: url(images/linked_In_white.png);
+            background-image: url(images/icons/linkedIn_solid.png);
             background-size: contain;
         }
         #insta{
-            background-image: url(images/insta-white-transparent.png);
+            background-image: url(images/icons/insta-clear.png);
             background-size: contain;
         }
         #insta:hover{
-            background-image: url(images/insta-white.png);
+            background-image: url(images/icons/insta-solid.png);
             background-size: contain;
         }
         #git{
-            background-image: url(images/github_white_transparent.png);
+            background-image: url(images/icons/github_clear.png);
             background-size: contain;
         }
         #git:hover{
-            background-image: url(images/github_white.png);
+            background-image: url(images/icons/github_solid.png);
             background-size: contain;
         }
         .logo{
@@ -196,11 +196,11 @@
             margin-left: 1.6em;
         }
         #spiral{
-            background-image: url(images/Spiral_white_clearBackground_medium_transparent_1.png);
+            background-image: url(images/icons/spiral_clear.png);
             background-size: contain;
         }
         #spiral:hover{
-            background-image: url(images/Spiral_white_clearBackground_medium.png);
+            background-image: url(images/icons/spiral_solid.png);
             background-size: contain;
         }
         .navbar{
@@ -272,7 +272,8 @@
             margin-bottom: -.75em;
         }
         .container-fluid.seperator{
-            background: url(images/line.png);
+/*            background: url(images/line.png);*/
+            background-color: white;
             opacity: .2;
             height: .1em;
             width: 20em;
@@ -307,6 +308,7 @@
 /*            text-decoration: overline;*/
             text-decoration-color: rgba(250,250,250,.75);
         }
+        
         .linkOffset{
             padding-top: 11em;
             margin-top: -11em;
@@ -341,26 +343,42 @@
         .indent{
             margin-left: 25px;
         }
+/*
         button{
             background-color: grey;
-/*            border: none;*/
             border-style: groove;
             border-color: rgba(0,0,0,.2);
         }
+*/
         
         .img{
-            margin-left:25px;
+            margin-left: 25px;
             margin-bottom: 25px;
-            padding: 100px;
+/*            padding: 100px;*/
+/*            padding-bottom: 100px*/
         }
         .box{
             width: 339px;
             height:230px;
             background: black;
         }
+        .boxBreakout{
+            width: 339px;
+            height: 168.1px;
+/*            background: black;*/
+            background-repeat: no-repeat;
+/*            padding:100px;*/
+        }
+/*
+        .boxProjectInversion{
+            width: 339px;
+            height: 230px;
+            background: black;
+        }
+*/
         .overlay{
             position: relative;
-            background-repeat: repeat;
+/*            background-repeat: repeat;*/
             background-size: contain;
             opacity:1;
         }
@@ -382,6 +400,7 @@
         .overlay:hover > .imageText{
             opacity:1;
         }
+        
         .imageText{
             position:relative;
             color: white;
@@ -394,8 +413,12 @@
         }
         .imageText.note{
             font-size: 1em;
-            width:150px;
-            margin-left: -5px;
+/*            width:160px;*/
+/*            margin-left: -5px;*/
+/*
+            position:relative;
+            text-align: center;
+*/
             font-style: italic;
         }
         .container.TextColumn{
@@ -405,11 +428,15 @@
         .indent{
             padding-left: 20px;
         }
+        
+        .imageColumn{
+            padding-top: 25px;
+        }
     </style>
     
 </head>
     
-<link rel="shortcut icon" href="images/favicon_whiteBackground.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/icons/favicon_whiteBackground.png" type="image/x-icon" />
     
 <body>
     <nav class="navbar navbar-default fixed-top hidden" role="navigation">
@@ -483,31 +510,31 @@
                 <div id="projInv">
                     <div class="bodyOfText buffer">
                         <h3>Project Inversion</h3>
-                        <div class="ImageColumn left">
-                            <div class="img box overlay" style="background-image: url(images/GravDemo_06.gif)">
-                                <p class="imageText" style="margin-top:-28px">Radial Gravity</p>
+                        <div class="imageColumn left">
+                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_grav_25.gif)">
+                                <p class="imageText" style="padding-top:90px">Radial Gravity</p>
                             </div>
                             
-                            <div class="img box overlay" style="background-image: url(images/Radius.png)">
-                                <p class="imageText" style="margin-top:-28px">Area of Effect</p>
+                            <div class="img box overlay" style="background-image: url(images/Game_Images/Radius_1.jpg)">
+                                <p class="imageText" style="padding-top:90px">Area of Effect</p>
                             </div>
                                 
-                            <div class="img box overlay" style="background-image: url(images/ropeDemo_c00.gif)">
-                                <p class="imageText" style="margin-top:-28px">Joint Chain</p>
+                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_chain_25.gif)">
+                                <p class="imageText" style="padding-top:90px">Joint Chain</p>
                             </div>
                             
-                            <div class="img box overlay" style="background-image: url(images/ropeDemo_rc00.gif)">
-                                <p class="imageText" style="margin-top:-28px">Bezier Curve</p>
+                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_chainRope_25.gif)">
+                                <p class="imageText" style="padding-top:90px">Bezier Curve</p>
                                 <p class="imageText note" style="margin-top:-20px">(rendered from joints)</p>
                             </div>
                             
-                            <div class="img box overlay" style="background-image: url(images/ropeDemo_rcc00.gif)">
-                                <p class="imageText" style="margin-top:-28px">Cylinder Colliders</p>
+                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_colliders_25.gif)">
+                                <p class="imageText" style="padding-top:90px">Cylinder Colliders</p>
                                 <p class="imageText note" style="margin-top:-20px">(rendered from curve)</p>
                             </div>
                             
-                            <div class="img box overlay" style="background-image: url(images/ropeDemo_r01.gif)">
-                                <p class="imageText" style="margin-top:-28px">Rendered Rope</p>
+                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_rope_25.gif)">
+                                <p class="imageText" style="padding-top:90px">Rendered Rope</p>
                             </div>
                         </div>
                         
@@ -548,51 +575,68 @@
                 <div id="breakoutVr">
                     <div class="bodyOfText buffer">
                         <h3>Breakout VR</h3>
-                        <p>Bringing the classic brick-breaker game mode into virtual reality, Breakout VR is a score based, endless wave arcade game bringing the social aspect of bowling/arcades to VR.
-                        <br><br>
-                        The goal of the game is to progress through as many levels as possible racking up a high score.  YOu must destroy all the blocks to reach the next level and keep the ball from touching the red plasma field behind you.
-                        <br></p>
-                        <h4 id="pifont"> Multi-Scoreboard System</h4>
-                        <p class="text indent">In Breakout-VR there are two different types of scoreboards that track the top 10 scores.  The first is the Master scoreboard which is filled with the top scores taken from all other past and present scoreboards. The second are custom boards which the player can create and manage from the menu.  The custom boards store the top 10 scores achieved while that specific scoreboard is selected as the current board.  This allows players to compete with eachother locally by creating a new scoreboard for a specific group or event starting the competition from scratch.
-                        <br><br>
-                        The goal of this system is to promote a more social local play where even though players are in solo matches they can still compete with one another. While this works well enough I think having specific gamemodes made for turn-taking local multiplayer would be better, at least to have in addition to the multi-board system. 
+                        <div class="imageColumn left">
+                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/Scoreboards_3.gif)">
+<!--                                style="background-image: url(images/Scoreboards.gif)"-->
+                                <p class="imageText" style="padding-top:60px" >Scoreboards</p>
+                            </div>
                             
-                        <br><br></p>
-                        <h4 id="pifont">Menu System</h4>
-                        <p class="text indent">Due to the spacial presence and the positional tracking of Virtual Reality the UI systems must be developed specifically for the platform. The UI should not take the player out of immersion.  It should take advantage of the unique characteristics of VR and feel like another feature of the game.
-                        <br><br>
-                        In Breakout the menu appears as a hologram over whichever controller opens it. All menu navigation is done with the trackpad, mimicing standard touchscreen controls. This allows checking the menu to be more similar to checking ones smartphone rather than interupting the game with a large fixred 2D screen the player must navigate with pointing and clicking.
-                            
-<!--                            To navigate within the menu the player can vertically scroll through with the touchpad and select the centered button by pressing it or scrolling horizontally.-->
-                            
-<!--                        Menu fixed to controller, touchpad as input. No pointing touching and you control where it is-->
-                        </p>   
-                        <h5 id="pifont2">Menu Builder</h5>
-                        <p class="text indent">
-                        In order to save time and effort of rebuilding and arranging the assets for the menu everytime it gets updated I generated/setup the menu assets from a text file outlining all the different buttons and submenus.  This proved especially useful when prototyping, slowly adding and testing different sections to the menu.
-                        <br><br></p>
-                        
-                        <h4 id="pifont">Blocks</h4>
-                        <h5 id="pifont2">Block Types</h5>
-                        <p class="text indent"><i>Normal</i> - simple purple block that shatters on ball impact<br>
-                        Explosive - red block that explodes on impact damaging blocks around it<br>
-                        <i>Perk</i> - yellow block that drops a random perk on impact (+1 health/+1 bullet in paddle)<br>
-                        <i>Turret</i> - a block that tracks the player, firing lasers bolts which can be blocked or dodged<br>
-                        <i>Extra Ball</i> - a blue block that spawns a second ball on impact</p>
-                        <h5 id="pifont2">Map Generation</h5>
-                        <p class="text indent">The layout of the individual levels work by generating a random string/array based on the available amounts of each block types and the playable depths based on the given level. This system worked well enough but didn't scale very well, however that was also due to the lack of block variety and other methods to increase the intensity of the levels as the player progressed.
-                        <br><br></p>
-<!--
-                        <h4 id="pifont">Take Away</h4>
-                        <p class="text indent" style="color: red;">
-                            intensity and dificulty don't scale well: could modify the velocity range of the ball based on the level. Or other factors to get force the player to move more like more types of turrets, lasers they need to dodge, or other objectives to worry about.
+                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/Custom_board_4.gif)">
+                                <p class="imageText" style="padding-top:60px">Custom Boards</p>
+                            </div>
+
+                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/Audio_Settings_1.gif)">
+                                <p class="imageText" style="padding-top:60px">Audio Settings</p>
+                            </div>
+                        </div>
+                        <div class="container TextColumn">
+                            <h4 id="pifont">About</h4>
+                            <p>Bringing the classic brick-breaker game mode into virtual reality, Breakout VR is a score based, endless wave arcade game bringing the social aspect of bowling/arcades to VR.
                             <br><br>
-                            In order to encourage a better/easier experience for local multiplayer a local multiplayer specific gamemode would be good. Especially one that could easily setup and started from the computer adding all the different player names to the match.
+                            The goal of the game is to progress through as many levels as possible racking up a high score.  YOu must destroy all the blocks to reach the next level and keep the ball from touching the red plasma field behind you.
+                            <br></p>
+                            <h4 id="pifont"> Multi-Scoreboard System</h4>
+                            <p class="text indent">In Breakout-VR there are two different types of scoreboards that track the top 10 scores.  The first is the Master scoreboard which is filled with the top scores taken from all other past and present scoreboards. The second are custom boards which the player can create and manage from the menu.  The custom boards store the top 10 scores achieved while that specific scoreboard is selected as the current board.  This allows players to compete with eachother locally by creating a new scoreboard for a specific group or event starting the competition from scratch.
                             <br><br>
-                            menu - takeAway
-                            
-                        <br><br></p>
--->
+                            The goal of this system is to promote a more social local play where even though players are in solo matches they can still compete with one another. While this works well enough I think having specific gamemodes made for turn-taking local multiplayer would be better, at least to have in addition to the multi-board system. 
+
+                            <br><br></p>
+                            <h4 id="pifont">Menu System</h4>
+                            <p class="text indent">Due to the spacial presence and the positional tracking of Virtual Reality the UI systems must be developed specifically for the platform. The UI should not take the player out of immersion.  It should take advantage of the unique characteristics of VR and feel like another feature of the game.
+                            <br><br>
+                            In Breakout the menu appears as a hologram over whichever controller opens it. All menu navigation is done with the trackpad, mimicing standard touchscreen controls. This allows checking the menu to be more similar to checking ones smartphone rather than interupting the game with a large fixred 2D screen the player must navigate with pointing and clicking.
+
+    <!--                            To navigate within the menu the player can vertically scroll through with the touchpad and select the centered button by pressing it or scrolling horizontally.-->
+
+    <!--                        Menu fixed to controller, touchpad as input. No pointing touching and you control where it is-->
+                            </p>   
+                            <h5 id="pifont2">Menu Builder</h5>
+                            <p class="text indent">
+                            In order to save time and effort of rebuilding and arranging the assets for the menu everytime it gets updated I generated/setup the menu assets from a text file outlining all the different buttons and submenus.  This proved especially useful when prototyping, slowly adding and testing different sections to the menu.
+                            <br><br></p>
+
+                            <h4 id="pifont">Blocks</h4>
+                            <h5 id="pifont2">Block Types</h5>
+                            <p class="text indent"><i>Normal</i> - simple purple block that shatters on ball impact<br>
+                            Explosive - red block that explodes on impact damaging blocks around it<br>
+                            <i>Perk</i> - yellow block that drops a random perk on impact (+1 health/+1 bullet in paddle)<br>
+                            <i>Turret</i> - a block that tracks the player, firing lasers bolts which can be blocked or dodged<br>
+                            <i>Extra Ball</i> - a blue block that spawns a second ball on impact</p>
+                            <h5 id="pifont2">Map Generation</h5>
+                            <p class="text indent">The layout of the individual levels work by generating a random string/array based on the available amounts of each block types and the playable depths based on the given level. This system worked well enough but didn't scale very well, however that was also due to the lack of block variety and other methods to increase the intensity of the levels as the player progressed.
+                            <br><br></p>
+    <!--
+                            <h4 id="pifont">Take Away</h4>
+                            <p class="text indent" style="color: red;">
+                                intensity and dificulty don't scale well: could modify the velocity range of the ball based on the level. Or other factors to get force the player to move more like more types of turrets, lasers they need to dodge, or other objectives to worry about.
+                                <br><br>
+                                In order to encourage a better/easier experience for local multiplayer a local multiplayer specific gamemode would be good. Especially one that could easily setup and started from the computer adding all the different player names to the match.
+                                <br><br>
+                                menu - takeAway
+
+                            <br><br></p>
+    -->                     
+                        </div>
                     </div>
                 </div>
             </div>
@@ -636,8 +680,7 @@
         
         
         //removes added hash from url
-        function remove_hash() 
-        {
+        function remove_hash() {
             history.replaceState("", document.title, window.location.pathname + window.location.search);
         }
         
@@ -944,7 +987,7 @@
         $(document).scroll(function() { 
 //            remove_hash();
             //log location
-            var loc = window.location.hash;
+//            var loc = window.location.hash;
 //            console.log("location: " + loc);
             modifyByScroll();
         });
