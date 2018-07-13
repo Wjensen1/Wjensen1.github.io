@@ -25,28 +25,9 @@
             min-width: 500px;
             margin: auto;
         }
-        .my-container {
-/*
-            width:100% !important;
-            width: static;
-            background-image: url(images/foggy_mountain_tinted_01.png);
-            background-color: rgba(0,0,0,1);
-            background-size: cover;
-            background-size: fixed;
-            background-position: center;
-            background-attachment: fixed;            
-            padding-top: 6em;
-*/
-        }
         #page{
 /*            padding-bottom: 5em;*/
             position: center;
-        }
-        #about{
-            
-        }
-        #projInv{
-/*            background-color: rgba(0,20,40,.5);*/
         }
         .bodyOfText{
             margin: auto;
@@ -54,28 +35,24 @@
             max-width: 975px;
             overflow: hidden;
         }
-        .starter-template {
-
-        }
         body{
-/*            min-width: 20%;*/
             min-height: 100%;
             height: auto!important;
             width:100% !important;
             width: static;
-            background-image: url(images/foggy_mountain_tinted_01_comp03.png);
             background-color: dimgray;
+            background-image: url(images/foggy_mountain_tinted_01_comp03.png);
             background-size: cover;
             background-size: fixed;
             background-position: center;
             background-attachment: fixed;            
-/*            padding-top: 6em;*/
             padding-top: 9.2em;
         }
         h1{
             min-width: 100%;
 /*            text-align: center;*/
-            font-family: 'Rajdhani', sans-serif;
+/*            font-family: 'Rajdhani', sans-serif;*/
+            font-family: 'Poiret One', cursive;
             color: white;
 /*            font-size: 2em;*/
             font-size: 3em;
@@ -84,7 +61,9 @@
         h2{
             min-width: 100%;
 /*            text-align: center;*/
-            font-family: 'Rajdhani', sans-serif;
+/*            font-family: 'Rajdhani', sans-serif;*/
+            font-family: 'Poiret One', cursive;
+/*            font-family: 'Josefin Slab', sans-serif;*/
             color: whitesmoke;
 /*            font-size: 1.6em;*/
             font-size: 2.5em;
@@ -104,11 +83,6 @@
         }
         ul{
             list-style-type: none;
-        }
-        li{
-/*            margin: 1000px 10px;*/
-/*            background-color: black;*/
-/*            padding-bottom: 100px;*/
         }
         #pifont{
             color: skyblue;
@@ -167,6 +141,22 @@
             background-image: url(images/icons/github_solid.png);
             background-size: contain;
         }
+        #vimeo{
+            background-image: url(images/icons/vimeo_transparent.png);
+            background-size: contain;
+        }
+        #vimeo:hover{
+            background-image: url(images/icons/vimeo.png);
+            background-size: contain;
+        }
+        #soundCloud{
+            background-image: url(images/icons/SoundCloud_transparent.png);
+            background-size: contain;
+        }
+        #soundCloud:hover{
+            background-image: url(images/icons/SoundCloud.png);
+            background-size: contain;
+        }
         .logo{
             height:80px;
             width:80px;
@@ -222,9 +212,15 @@
             font-family: 'Poiret One', cursive;
             color: white;
             font-size: 4.5em;
-            margin-left: .4em;
-            margin-bottom: 0em;
-            margin-top: 0em;
+
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
         }
         .navbar-header:hover{
 /*            removes underline on hover*/
@@ -349,6 +345,37 @@
             margin-left:25px;
             margin-bottom: 25px;
         }
+        #profilePic{
+/*
+            width:275px;
+            height:325px;
+            background-image: url(images/profilePic_1.jpg);
+*/
+            margin-top: 50px;
+            width:413px;
+            height:488px;
+            background-image: url(images/profilePic_2.jpg);
+            background-repeat: no-repeat;
+        }
+        .TextColumn{
+            padding:100px;
+        }
+        .header{
+/*            margin-top: 20px;*/
+/*
+            text-decoration: underline;
+            border-bottom: 1px solid;
+*/
+            overflow: hidden;
+/*            background-image: linear-gradient(to right, white 75%, transparent 75%);*/
+/*            background-image: linear-gradient(to right, transparent, rgba(255,255,255,.35) 5%, rgba(255,255,255,.35) 95%,transparent);*/
+/*            background-image: linear-gradient(to right, rgba(255,255,255,.35) 80%,transparent);*/
+/*            background-image: linear-gradient(to right, rgba(255,255,255,.35) 100%,transparent);*/
+            background-position: 0em 1.15em;
+/*            background-repeat: repeat-x;*/
+            background-repeat: no-repeat;
+            background-size: 200px 2px;
+        }
     </style>
     
 </head>
@@ -378,6 +405,18 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
+                        <a href="https://soundcloud.com/billy-jensen-198132536" target="_blank" title="SoundCloud">
+                            <div class="socialIcon" id="soundCloud">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://vimeo.com/wjjensen" target="_blank" title="Vimeo">
+                            <div class="socialIcon" id="vimeo">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
                         <a href="https://www.instagram.com/therealbilljensen" target="_blank" title="Instagram">
                             <div class="socialIcon" id="insta">
                             </div>
@@ -400,6 +439,8 @@
                 <li class="list-inline-item">
                     <a href="Games.html" class="pageLink">Games</a>
                 </li>
+                <li class="list-inline-item">
+                    <a href="Audio.html" class="pageLink ">Audio</a>
                 <li class="list-inline-item">
                     <a href="images/foggy_mountain_tinted_01.png" target="_blank" class="pageLink">Resume</a>
                 </li>
@@ -432,14 +473,21 @@
 -->
             
             <div class="linkOffset compressed" id="about">
-                <div class="bodyOfText buffer">
-                    <h2>About</h2>
+                <div class="bodyOfText buffer" style="margin-top: 20px;">
+                    
+<!--                    <div class="img left" id="profilePic"></div>-->
+                    
+<!--                    <h2 class="container"style="margin-top: 50px">About</h2>-->
                     <div class="ImageColumn left">
-
+                        <div class="img" id="profilePic"></div>
                     </div>
 
-                    <div class="TextColumn">
-                        <p class="text indent">about text <br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+                    <div class="container TextColumn">
+                        <h2 class="header text indent">About</h2>
+                        <p class="text indent">Music defies language. It communicates on a different level, felt by people of all languages and cultures. As both a musician and a game developer the most important part of any game or digital story is the emotional connection and immersion into the world. It matters much less what the world is as long as you can get the player/audience invested in it. 
+                            <br><br>Using sound design, I focus on adding to the detail of the environment and using the sounds to play to the emotional ambiance/theme of the scene. The music is the programming for how a player should feel at any given moment. Through these manipulations of sound working in harmony with the picture I work to bridge the gap between these digital mediums and real human connections.
+
+</p>
                     </div>
                 </div>
             </div>
@@ -459,7 +507,18 @@
                                 <div class="contactIcon" id="git">
                                 </div>
                             </a>
-                        </li>
+                        </li><li class="list-inline-item">
+                        <a href="https://soundcloud.com/billy-jensen-198132536" target="_blank" title="SoundCloud">
+                            <div class="contactIcon" id="soundCloud">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://vimeo.com/wjjensen" target="_blank" title="Vimeo">
+                            <div class="contactIcon" id="vimeo">
+                            </div>
+                        </a>
+                    </li>
                         <li class="list-inline-item">
                             <a href="https://www.instagram.com/therealbilljensen" target="_blank" title="Instagram">
                                 <div class="contactIcon" id="insta">
@@ -634,8 +693,10 @@
                 //font-size: 4.5em - 1.5em
             $(".navbar-header").css("margin-bottom", Lerp(0,1.5,t) +"em");
     //            margin-bottom: 0em - 1.5em;
-            $(".navbar-header").css("margin-left", Lerp(.4,.8,t) +"em");
+//            $(".navbar-header").css("margin-left", Lerp(.4,.8,t) +"em");
     //            margin-left: .4em - .8em;
+//            $(".navbar-header").css("padding-left", Lerp(1.5,2.75,t) +"em");
+    //              padding-left: 1.5 - 2.75
             $(".navbar-header").css("margin-top", Lerp(0,-0.1,t) +"em");
             //.navbar
             $(".navbar").css("height", Lerp(11,6,t) +"em");
@@ -710,7 +771,7 @@
         function mobileSwitch(){
             var w = $(document).width();
 //            console.log("width: " + w);
-            var switchPoint = 800;
+            var switchPoint = 1000;
             //if document width is lessthan or equal to certain amount
             
             if(w <= switchPoint){

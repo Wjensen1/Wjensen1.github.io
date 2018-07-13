@@ -8,29 +8,10 @@
     <meta name="keywords" content="Portfolio,Video Games,Game,Programmer,C#,ProjectInversion,VR">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Billy Jensen - Games</title>
+    <title>Billy Jensen</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    
-
-<!--    "@type": "Organization",-->
-    
-<!--
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "https://www.wjjensen.com",
-      "name": "Billy Jensen",
-      "contactPoint": 
-      {
-        "@type": "ContactPoint",
-        "email": "wjensen.games@gmail.com"
-      }
-    }
-    </script>
--->
     
     
     <!--Fonts-->
@@ -70,7 +51,8 @@
         h1{
             min-width: 100%;
 /*            text-align: center;*/
-            font-family: 'Rajdhani', sans-serif;
+/*            font-family: 'Rajdhani', sans-serif;*/
+            font-family: 'Poiret One', cursive;
             color: white;
 /*            font-size: 2em;*/
             font-size: 3em;
@@ -79,7 +61,9 @@
         h2{
             min-width: 100%;
 /*            text-align: center;*/
-            font-family: 'Rajdhani', sans-serif;
+/*            font-family: 'Rajdhani', sans-serif;*/
+            font-family: 'Poiret One', cursive;
+/*            font-family: 'Josefin Slab', sans-serif;*/
             color: whitesmoke;
 /*            font-size: 1.6em;*/
             font-size: 2.5em;
@@ -97,32 +81,26 @@
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.75em;
         }
-        h5{
-            min-width: 100%;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.4em;
-        }
-        h6{
-            min-width: 100%;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.2em;
-/*            color: rgba(200,240,255,.6);*/
-            color: rgba(250,250,250,.6);
-            font-style: italic;
-        }
         ul{
             list-style-type: none;
         }
         #pifont{
             color: skyblue;
         }
-        #pifont2{
-            color: lightblue;
-        }
         p{
             font-family: 'Josefin Slab', sans-serif;
             overflow: hidden;
             color: ghostwhite;
+            font-size: 1.1em;
+        }
+        .link{
+            font-family: 'Josefin Slab', sans-serif;
+/*            overflow: hidden;*/
+            color: ghostwhite;
+            font-size: 1.1em;
+        }
+        .link:hover{
+            color: rgba(250,250,250,.6);
             font-size: 1.1em;
         }
         .socialIcon{
@@ -131,6 +109,13 @@
             margin-top: 3.75em;
             margin-left: -.8em;
             margin-right: 1em;
+        }
+        .contactIcon{
+            height: 30px;
+            width: 30px;
+            margin-right: 0.3em;
+            margin-top: .2em;
+            margin-bottom: -.5em;
         }
         #linked-in{
             background-image: url(images/icons/linkedIn_clear.png);
@@ -294,10 +279,7 @@
         }
         .sectionLink:hover{
             color: rgba(250,250,250,.95);
-/*            text-decoration: overline;*/
-            text-decoration-color: rgba(250,250,250,.75);
         }
-        
         .linkOffset{
             padding-top: 11em;
             margin-top: -11em;
@@ -305,6 +287,27 @@
         }
         .hidden{
             display: none;
+        }
+        #lootSection{
+            
+        }
+        #gravDemo{
+            width: 339px;
+            height:230px;
+            
+/*            background-color: rgba(50,50,50,.65);*/
+            
+            background-image: url(images/GravDemo_06.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        #gravImg{
+            width: 339px;
+            height:230px;
+            
+            background-image: url(images/Radius.png);
+/*            background-repeat: no-repeat;*/
+            background-size: contain;
         }
         .center{
             position: relative;
@@ -332,100 +335,53 @@
         .indent{
             margin-left: 25px;
         }
-/*
         button{
             background-color: grey;
+/*            border: none;*/
             border-style: groove;
             border-color: rgba(0,0,0,.2);
         }
-*/
-        
         .img{
-            margin-left: 25px;
+            margin-left:25px;
             margin-bottom: 25px;
-/*            padding: 100px;*/
-/*            padding-bottom: 100px*/
         }
-        .box{
-            width: 339px;
-            height:230px;
-            background: black;
-        }
-        .boxBreakout{
-            width: 339px;
-            height: 168.1px;
-/*            background: black;*/
+        #profilePic{
+/*
+            width:275px;
+            height:325px;
+            background-image: url(images/profilePic_1.jpg);
+*/
+            margin-top: 50px;
+            width:413px;
+            height:488px;
+            background-image: url(images/profilePic_2.jpg);
             background-repeat: no-repeat;
-/*            padding:100px;*/
         }
-/*
-        .boxProjectInversion{
-            width: 339px;
-            height: 230px;
-            background: black;
+        .TextColumn{
+            padding:100px;
         }
-*/
-        .overlay{
-            position: relative;
-/*            background-repeat: repeat;*/
-            background-size: contain;
-            opacity:1;
+        .header{
+            overflow: hidden;
+            background-position: 0em 1.15em;
+            background-repeat: no-repeat;
+            background-size: 200px 2px;
         }
-        .overlay:after{
-            position: absolute;
-            content: '';
-            color: white;
-            text-align: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            opacity: 0;            
+        .video{
+/*            margin: 10px 20px;*/
+            margin-left: 15px;
+            margin-right: 15px;
+            padding-bottom: 50px;
+/*            padding-top: -50px;*/
         }
-        .overlay:hover:after{
-            opacity: .5;
-        }
-        .overlay:hover > .imageText{
-            opacity:1;
-        }
-        
-        .imageText{
-            position:relative;
-            color: white;
-            opacity: 0;
-            text-align: center;
-            font-size: 2em;
-/*            overflow: visible;*/
-/*            display: block;*/
-            z-index: 2;
-        }
-        .imageText.note{
-            font-size: 1em;
-/*            width:160px;*/
-/*            margin-left: -5px;*/
-/*
-            position:relative;
-            text-align: center;
-*/
-            font-style: italic;
-        }
-        .container.TextColumn{
-/*            min-width: 500px;*/
-            padding: 100px;
-        }
-        .indent{
-            padding-left: 20px;
-        }
-        
-        .imageColumn{
-            padding-top: 25px;
+        .music{
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     </style>
     
 </head>
     
-<link rel="shortcut icon" href="images/icons/favicon_whiteBackground.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/favicon_whiteBackground.png" type="image/x-icon" />
     
 <body>
     <nav class="navbar navbar-default fixed-top hidden" role="navigation">
@@ -469,6 +425,12 @@
                     </li>
                 </ul>
             </div>
+<!--        </div>-->
+<!--
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationLinks" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+-->
         
         <div class="container-fluid primary" id="navigationLinks">
             <ul class="list-inline">
@@ -476,10 +438,12 @@
                     <a href="index.html" class="pageLink">Home</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#" class="pageLink highlighted">Games</a>
+                    <a href="Games.html" class="pageLink">Games</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="Audio.html" class="pageLink ">Audio</a>
+                    <a href="Audio.html" class="pageLink highlighted">Audio</a>
+                </li>
+                </li>
                 <li class="list-inline-item">
                     <a href="images/foggy_mountain_tinted_01.png" target="_blank" class="pageLink">Resume</a>
                 </li>
@@ -491,10 +455,10 @@
         <div class="container-fluid secondary">
             <ul class="list-inline">
                 <li class="list-inline-item active">
-                    <a href="#projectInversion" class="sectionLink" id="projectInversionLink">Project Inversion</a>
+                    <a href="#about" class="sectionLink" id="aboutLink">Videos</a>
                 </li>
                 <li class="list-inline-item active">
-                    <a href="#breakout" class="sectionLink" id="breakoutLink">BreakoutVR</a>
+                    <a href="#contact" class="sectionLink" id="contactLink">Music</a>
                 </li>
             </ul>
         </div>
@@ -502,154 +466,44 @@
     
     <main role="main" class="my-container">   
         <div id="page">
-            <div class="linkOffset compressed" id="top">
-                <br>
-                <div class="bodyOfText">
-                    <h1>Games</h1>
+
+            <div class="linkOffset compressed" id="about">
+                <div class="bodyOfText buffer" style="margin-top: 20px;">
+                    <h2 class="header text ">Videos</h2>
+                    
+<!--
+                    <iframe class="video" src="https://player.vimeo.com/video/279906149" width="391.2" height="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    
+                    <iframe class="video" src="https://player.vimeo.com/video/279909254" width="391.2" height="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    
+                    <iframe class="video" src="https://player.vimeo.com/video/279906197" width="391.2" height="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+-->
+                 
+                    <iframe class="video" src="https://player.vimeo.com/video/279906149" width="450" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    
+                    <iframe class="video" src="https://player.vimeo.com/video/279909254" width="450" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    
+                    <iframe class="video" src="https://player.vimeo.com/video/279906197" width="450" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+
                 </div>
             </div>
             
-            <div class="linkOffset compressed" id="projectInversion">
-                <div id="projInv">
-                    <div class="bodyOfText buffer">
-                        <h3>Project Inversion</h3>
-                        <div class="imageColumn left">
-                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_grav_25.gif)">
-                                <p class="imageText" style="padding-top:90px">Radial Gravity</p>
-                            </div>
-                            
-                            <div class="img box overlay" style="background-image: url(images/Game_Images/Radius_1.jpg)">
-                                <p class="imageText" style="padding-top:90px">Area of Effect</p>
-                            </div>
-                                
-                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_chain_25.gif)">
-                                <p class="imageText" style="padding-top:90px">Joint Chain</p>
-                            </div>
-                            
-                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_chainRope_25.gif)">
-                                <p class="imageText" style="padding-top:90px">Bezier Curve</p>
-                                <p class="imageText note" style="margin-top:-20px">(rendered from joints)</p>
-                            </div>
-                            
-                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_colliders_25.gif)">
-                                <p class="imageText" style="padding-top:90px">Cylinder Colliders</p>
-                                <p class="imageText note" style="margin-top:-20px">(rendered from curve)</p>
-                            </div>
-                            
-                            <div class="img box overlay" style="background-image: url(images/Game_Images/projInv_rope_25.gif)">
-                                <p class="imageText" style="padding-top:90px">Rendered Rope</p>
-                            </div>
-                        </div>
-                        
-                        <div class="container TextColumn">
-                            <h4 id="pifont">About</h4>
-                            <p > Project Inversion is a 2.5d puzzle platformer set in outerspace built around a gravity control mechanic.
-                                <br>
-                            </p>
-                            <h4 id="pifont">Radial Gravity</h4>
-                            <p class="indent">
-                                In the games initial concept, the player controlled the direction of gravity for the entire level. However that system did not lend itself to a clean multiplayer build.  Instead the mechanic was rebuilt as a radial gravity-control system allowing multiple players to control gravity at the same time.
-                                <br><br>
-                                The system works with an <span id="img1">inner and outer circle of effect.</span>  Within the inner circle the full 9.8m/s^2 gravitational acceleration is applied. Within the outer circle an acceleration ranging from 9.8m/s^2 to 0m/s^2 is applied to objects based on their distance from the player.
-                                <br><br>
-                            </p>
-                            <h4 id="pifont">Grapple System</h4>
-                            <p class="indent">
-                                Complementing the player's  gravity mechanic they also have control over a grappling gun.  This allows the player to affect their character separately from the objects around them and redirect the forces gravity has on the character.
-                            </p>
-                            <h5 id="pifont2"> The Base Physics</h5>
-                            <p class="indent">The initial step in designing the rope/grapple system was to get the applied forces of the rope working first before working on how the rope itself would be rendered. This ensures that the end result will function exactly how intended and the rendering of the rope can be done on top of this system. The base system looks at the player position, rope length, and the point the rope is grappled to. Using these and the ropes elasticity the correct forces to simulate the effects of the rope can be applied to the player.</p>
-                            <h5 id="pifont2"> Rendering</h5>
-                            <h6>Bezier Curve</h6>
-                            <p class="indent">At first I attempted to render a semi-random Bezier curve between the player and the grappled point to simulate the rope.  This method used the rope length and the distance between the player and grappled point to modify the Bezier curve's control points. However, while in some situations this solution looked okay, it came across fairly stiff and fake in others, especially when the player shifted the direction of gravity.</p>
-                            <h6 class="indent">Joint Chain</h6>
-                            <p  class="indent">The other approach was to use a more physics based approach for rendering the rope. Using a series of linked joints who respond to the gravitational forces, collisions, and forces between the individual joints you can create a fairly believable chain.  The system however does not look like a rope, even when greatly increasing the number of joints in the series which drastically decreases the performance it still looks fairly rigid/stiff.</p>
-                            <h6>The Solution</h6>
-                            <p class="indent">To achieve the desired fluid rope like appearance in a performance light system a combination of the two methods was used. What determines the underlying physics of the rope is a hidden low count joint chain. That underlying chain is then used as control points in rendering a Bezier curve.
-                            <br></p>
-                            <h5 id="pifont2">Colliders</h5>
-                            <p class="indent">While the underlying joint chain allows the rope to interact with gravity and manages the internal forces/bends within the rope, the newly rendered curve rope now needs to be able to interact with the environment. The final layer of the system is a series of cylinder colliders that resize as the rope compresses and stretches is then generated from the rendered Bezier curve.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="linkOffset compressed" id="breakout">
-                <div id="breakoutVr">
-                    <div class="bodyOfText buffer">
-                        <h3>Breakout VR</h3>
-                        <div class="imageColumn left">
-                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/breakout_gameplay_field_2.gif)">
-                                <p class="imageText" style="padding-top:60px" >Gameplay</p>
-                            </div>
-                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/Scoreboards_3.gif)">
-                                <p class="imageText" style="padding-top:60px">Scoreboards</p>
-                            </div>
-                            
-                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/Custom_board_4.gif)">
-                                <p class="imageText" style="padding-top:60px">Custom Boards</p>
-                            </div>
-
-                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/Audio_Settings_1.gif)">
-                                <p class="imageText" style="padding-top:60px">Audio Settings</p>
-                            </div>
-                            
-                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/breakout_gameplay_start.gif)">
-                                <p class="imageText" style="padding-top:60px" >Gameplay</p>
-                            </div>
-                            <div class="img boxBreakout overlay" style="background-image: url(images/Game_Images/breakout_gameplay_2balls_20.gif)">
-                                <p class="imageText" style="padding-top:60px" >Gameplay</p>
-                            </div>
-                        </div>
-                        <div class="container TextColumn">
-                            <h4 id="pifont">About</h4>
-                            <p>Bringing the classic brick-breaker game mode into virtual reality, Breakout VR is a score based, endless wave arcade game bringing the social aspect of bowling/arcades to VR.
-                            <br><br>
-                            The goal of the game is to progress through as many levels as possible racking up a high score.  You must destroy all the blocks to reach the next level and keep the ball from touching the red plasma field behind you.
-                            <br></p>
-                            <h4 id="pifont"> Multi-Scoreboard System</h4>
-                            <p class="text indent">In Breakout-VR there are two different types of scoreboards that track the top 10 scores.  The first is the Master scoreboard which is filled with the top scores taken from all other past and present scoreboards. The second are custom boards which the player can create and manage from the menu.  The custom boards store the top 10 scores achieved while that specific scoreboard is selected as the current board.  This allows players to compete with eachother locally by creating a new scoreboard for a specific group or event starting the competition from scratch.
-                            <br><br>
-                            The goal of this system is to promote a more social local play where even though players are in solo matches they can still compete with one another. While this works well enough I think having specific gamemodes made for turn-taking local multiplayer would be better, at least to have in addition to the multi-board system. 
-
-                            <br><br></p>
-                            <h4 id="pifont">Menu System</h4>
-                            <p class="text indent">Due to the spacial presence and the positional tracking of Virtual Reality the UI systems must be developed specifically for the platform. The UI should not take the player out of immersion.  It should take advantage of the unique characteristics of VR and feel like another feature of the game.
-                            <br><br>
-                            In Breakout the menu appears as a hologram over whichever controller opens it. All menu navigation is done with the trackpad, mimicing standard touchscreen controls. This allows checking the menu to be more similar to checking ones smartphone rather than interupting the game with a large fixred 2D screen the player must navigate with pointing and clicking.
-
-    <!--                            To navigate within the menu the player can vertically scroll through with the touchpad and select the centered button by pressing it or scrolling horizontally.-->
-
-    <!--                        Menu fixed to controller, touchpad as input. No pointing touching and you control where it is-->
-                            </p>   
-                            <h5 id="pifont2">Menu Builder</h5>
-                            <p class="text indent">
-                            In order to save time and effort of rebuilding and arranging the assets for the menu everytime it gets updated I generated/setup the menu assets from a text file outlining all the different buttons and submenus.  This proved especially useful when prototyping, slowly adding and testing different sections to the menu.
-                            <br><br></p>
-
-                            <h4 id="pifont">Blocks</h4>
-                            <h5 id="pifont2">Block Types</h5>
-                            <p class="text indent"><i>Normal</i> - simple purple block that shatters on ball impact<br>
-                            Explosive - red block that explodes on impact damaging blocks around it<br>
-                            <i>Perk</i> - yellow block that drops a random perk on impact (+1 health/+1 bullet in paddle)<br>
-                            <i>Turret</i> - a block that tracks the player, firing lasers bolts which can be blocked or dodged<br>
-                            <i>Extra Ball</i> - a blue block that spawns a second ball on impact</p>
-                            <h5 id="pifont2">Map Generation</h5>
-                            <p class="text indent">The layout of the individual levels work by generating a random string/array based on the available amounts of each block types and the playable depths based on the given level. This system worked well enough but didn't scale very well, however that was also due to the lack of block variety and other methods to increase the intensity of the levels as the player progressed.
-                            <br><br></p>
-    <!--
-                            <h4 id="pifont">Take Away</h4>
-                            <p class="text indent" style="color: red;">
-                                intensity and dificulty don't scale well: could modify the velocity range of the ball based on the level. Or other factors to get force the player to move more like more types of turrets, lasers they need to dodge, or other objectives to worry about.
-                                <br><br>
-                                In order to encourage a better/easier experience for local multiplayer a local multiplayer specific gamemode would be good. Especially one that could easily setup and started from the computer adding all the different player names to the match.
-                                <br><br>
-                                menu - takeAway
-
-                            <br><br></p>
-    -->                     
-                        </div>
-                    </div>
+            <div class="linkOffset compressed" id="contact">
+                <div class="bodyOfText buffer">
+                    <h2>Music</h2>
+                    
+<!--
+                    <iframe class="music" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/471367566&color=%234f4339&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    
+                    <iframe class="music" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/471365835&color=%234f4339&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    
+                    <iframe class="music" width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/471361653&color=%234f4339&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+-->
+                    
+                    <iframe width="100%" height="465" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/477684771&color=%234f4339&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    
                 </div>
             </div>
         </div>
@@ -692,7 +546,8 @@
         
         
         //removes added hash from url
-        function remove_hash() {
+        function remove_hash() 
+        {
             history.replaceState("", document.title, window.location.pathname + window.location.search);
         }
         
@@ -817,7 +672,7 @@
     //            margin-bottom: 0em - 1.5em;
 //            $(".navbar-header").css("margin-left", Lerp(.4,.8,t) +"em");
     //            margin-left: .4em - .8em;
-//            $(".navbar-header").css("padding-left", Lerp(1.5,3,t) +"em");
+//            $(".navbar-header").css("padding-left", Lerp(1.5,2.75,t) +"em");
     //              padding-left: 1.5 - 2.75
             $(".navbar-header").css("margin-top", Lerp(0,-0.1,t) +"em");
             //.navbar
@@ -913,10 +768,9 @@
         function highlightSection(pagePosition, docHeight){
             //link data stored in parrallel arrays
             //id of link
-            var linkIDs = ["#projectInversionLink","#breakoutLink"];
-            //id of sections linked to
-//            var sectionIDs = ["#projInv","#breakoutVR"];            
-            var sectionIDs = ["#projectInversion","#breakout"];            
+            var linkIDs = ["#aboutLink","#contactLink"];
+            //id of sections linked to          
+            var sectionIDs = ["#about","#contact"];          
 
             var h = $(window).height();
             var bottomOfPage = pagePosition + (h/docHeight);
@@ -1001,11 +855,13 @@
         $(document).scroll(function() { 
 //            remove_hash();
             //log location
-//            var loc = window.location.hash;
+            var loc = window.location.hash;
 //            console.log("location: " + loc);
             modifyByScroll();
         });
     });
 </script>
+
+
     
 </html>
