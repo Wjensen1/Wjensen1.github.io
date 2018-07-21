@@ -1,0 +1,339 @@
+        #page{
+            padding-bottom: 5em;
+            position: center;
+        }
+        .bodyOfText{
+            margin: auto;
+            width: 75%;
+            max-width: 975px;
+            overflow: hidden;
+        }
+        body{
+            min-width: 500px;
+            margin: auto;
+            min-height: 100%;
+            height: auto!important;
+            width:100% !important;
+            width: static;
+            background-color: dimgray;
+            background-image: url(images/foggy_mountain_tinted_01_comp03.png);
+            background-size: cover;
+            background-size: fixed;
+            background-position: center;
+            background-attachment: fixed;            
+            padding-top: 9.2em;
+        }
+        h1{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            font-size: 3em;
+            font-style: oblique;
+        }
+        h2{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            color: whitesmoke;
+            font-size: 2.5em;
+        }
+        h2.home{
+            font-family: 'Poiret One', cursive;
+
+        }
+        h3{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            color: aliceblue;
+            font-size: 2em;
+        }
+        h4{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.75em;
+        }
+        h5{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4em;
+        }
+        h6{
+            min-width: 100%;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2em;
+/*            color: rgba(200,240,255,.6);*/
+            color: rgba(250,250,250,.6);
+            font-style: italic;
+        }
+        ul{
+            list-style-type: none;
+        }
+        #pifont{
+            color: skyblue;
+        }
+        #pifont2{
+            color: lightblue;
+        }
+        p{
+            font-family: 'Josefin Slab', sans-serif;
+            overflow: hidden;
+            color: ghostwhite;
+            font-size: 1.1em;
+        }
+        .socialIcon{
+            height: 40px;
+            width: 40px;
+            margin-top: 3.75em;
+            margin-left: -.8em;
+            margin-right: 1em;
+        }
+        .contactIcon{
+            height: 30px;
+            width: 30px;
+            margin-right: 0.3em;
+            margin-top: .2em;
+            margin-bottom: -.5em;
+        }
+        #linked-in{
+            background-image: url(images/icons/linkedIn_clear.png);
+            background-size: contain;
+        }
+        #linked-in:hover{
+            background-image: url(images/icons/linkedIn_solid.png);
+            background-size: contain;
+        }
+        #insta{
+            background-image: url(images/icons/insta-clear.png);
+            background-size: contain;
+        }
+        #insta:hover{
+            background-image: url(images/icons/insta-solid.png);
+            background-size: contain;
+        }
+        #git{
+            background-image: url(images/icons/github_clear.png);
+            background-size: contain;
+        }
+        #git:hover{
+            background-image: url(images/icons/github_solid.png);
+            background-size: contain;
+        }
+        #vimeo{
+            background-image: url(images/icons/vimeo_transparent.png);
+            background-size: contain;
+        }
+        #vimeo:hover{
+            background-image: url(images/icons/vimeo.png);
+            background-size: contain;
+        }
+        #soundCloud{
+            background-image: url(images/icons/SoundCloud_transparent.png);
+            background-size: contain;
+        }
+        #soundCloud:hover{
+            background-image: url(images/icons/SoundCloud.png);
+            background-size: contain;
+        }
+        .logo{
+            height:80px;
+            width:80px;
+            margin-top: 1.5em;
+            margin-left: 1.6em;
+        }
+        #spiral{
+            background-image: url(images/icons/spiral_clear.png);
+            background-size: contain;
+        }
+        #spiral:hover{
+            background-image: url(images/icons/spiral_solid.png);
+            background-size: contain;
+        }
+        .navbar{
+            padding-top: 0;
+            padding-bottom: 1;
+            height: 11em;
+        }
+        .navbar-header{
+            text-align: center;
+            font-family: 'Poiret One', cursive;
+            color: white;
+            font-size: 4.5em;
+
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar-header:hover{
+/*            removes underline on hover*/
+            color: ghostwhite;
+            text-decoration: none;
+        }
+        .container{
+            display: inline;
+        }
+        .text{
+            min-width: 35%;
+        }
+        .container-fluid{
+            text-align: center !important;
+            justify-content: center !important;
+            display: inline;
+            line-height: 0.2;
+            margin-top: -.4em;
+            margin-bottom: -0.85em;
+        }
+        .container-fluid.secondary{
+            margin-top: 1.5em;
+            margin-bottom: -.75em;
+        }
+        .container-fluid.seperator{
+            background-color: white;
+            opacity: .2;
+            height: .1em;
+            width: 20em;
+            margin-top: .75em;
+            margin-bottom: -1em;
+        }
+        .pageLink{
+            font-family: 'Poiret One', cursive;
+            color: rgba(250,250,250,0.6);
+            font-size: 1.5em;
+        }
+        .pageLink:hover{
+            color:white;
+            text-decoration: none;
+        }
+        .highlighted{
+            color:white;
+        }
+        .currentSection{
+            color:white;
+            text-decoration-line: line-through;
+            text-decoration-color: rgba(250,250,250,.5);
+        }
+        .sectionLink{
+            margin-top: .75em;
+            font-family: 'Rajdhani', sans-serif;
+            color: rgba(250,250,250,.75);
+            font-size: 1em;
+        }
+        .sectionLink:hover{
+            color: rgba(250,250,250,.95);
+/*            text-decoration: overline;*/
+            text-decoration-color: rgba(250,250,250,.75);
+        }
+        .linkOffset{
+            padding-top: 7em;
+            margin-top: -7em;
+            position: relative;
+        }
+        .hidden{
+            display: none;
+        }
+        .left{
+            float: left;  
+/*            margin-right: 1em;*/
+            margin-right: 25px;
+        }
+        .buffer{
+            margin-bottom: 50px;
+        }
+        .indent{
+            margin-left: 25px;
+        }        
+        .img{
+            margin-left: 25px;
+            margin-bottom: 25px;
+/*            padding: 100px;*/
+/*            padding-bottom: 100px*/
+        }
+        .boxInversion{
+            width: 339px;
+            height:230px;
+            background: black;
+        }
+        .boxBreakout{
+            width: 339px;
+            height: 168.1px;
+            background-repeat: no-repeat;
+        }
+        .overlay{
+            position: relative;
+/*            background-repeat: repeat;*/
+            background-size: contain;
+            opacity:1;
+        }
+        .overlay:after{
+            position: absolute;
+            content: '';
+            color: white;
+            text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0;            
+        }
+        .overlay:hover:after{
+            opacity: .5;
+        }
+        .overlay:hover > .imageText{
+            opacity:1;
+        }
+        .imageText{
+            position:relative;
+            color: white;
+            opacity: 0;
+            text-align: center;
+            font-size: 2em;
+            z-index: 2;
+        }
+        .imageText.note{
+            font-size: 1em;
+            font-style: italic;
+        }
+        .TextColumn{
+            padding: 100px;
+        }        
+        .imageColumn{
+            padding-top: 25px;
+        }
+
+        #profilePic{
+            width:275px;
+            height:325px;
+            margin-top: 50px;
+            background-image: url(images/profilePic_2.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .header{
+            overflow: hidden;
+            background-position: 0em 1.15em;
+            background-repeat: no-repeat;
+            background-size: 200px 2px;
+        }
+        .video{
+            margin-left: 15px;
+            margin-right: 15px;
+            padding-bottom: 50px;
+        }
+        .music{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .link{
+            font-family: 'Josefin Slab', sans-serif;
+/*            overflow: hidden;*/
+            color: ghostwhite;
+            font-size: 1.1em;
+        }
+        .link:hover{
+            color: rgba(250,250,250,.6);
+            font-size: 1.1em;
+        }
