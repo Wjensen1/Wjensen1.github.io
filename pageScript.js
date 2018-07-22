@@ -309,6 +309,16 @@
             }
             
         }
+
+        //setcion link with offset and no url hash
+        $(".sectionLink").on("click", function(evt){
+            //stop normal link event
+            evt.preventDefault();
+            //get target hash
+            var hash = $(this).prop("hash");
+            //move to hash position with offset of 100
+            $(window).scrollTop($(hash).position().top - 100);
+        })
         
         modifyByScroll();
         setStartingNavState();
