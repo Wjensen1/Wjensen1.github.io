@@ -285,6 +285,7 @@
         .overlay:hover > .imageText{
             opacity:1;
         }
+
         .imageText{
             position:relative;
             color: white;
@@ -297,6 +298,7 @@
             font-size: 1em;
             font-style: italic;
         }
+        
         .TextColumn{
             padding: 100px;
         }        
@@ -304,14 +306,67 @@
             padding-top: 25px;
         }
 
+
+
+        .bannerOverlay{
+            position: relative;
+/*            background-repeat: repeat;*/
+            background-size: contain;
+            opacity:1;
+        }
+        .bannerOverlay:after{
+            position: absolute;
+            content: '';
+            color: white;
+            text-align: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background: black;
+            opacity: 0;            
+        }
+        .bannerOverlay:hover:after{
+            opacity: .5;
+        }
+        .bannerOverlay:hover > .imageText{
+            opacity:1;
+        }
+
+
         #profilePic{
-            width:257px;
-            height:345px;
+            width:307px;
+            height:307px;
             margin-top: 50px;
-            background-image: url(images/IMG_5777%20257x345.jpg);
+            background-image: url(images/profile_round_307x307.png);
             background-repeat: no-repeat;
             background-size: contain;
         }
+
+        #resumeThumbnail{
+/*
+            width:150px;
+            height: 210px;            
+*/
+            
+            width:100px;
+            height:139px;
+/*            margin-top: 50px;*/
+            border-style: solid;
+/*            border-color: #B2BCAA;*/
+            border-color: #8c8c8c;
+            background-image: url(images/resume_thumbnail.PNG);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .invisibleLink {
+            display: block;
+            left: 55px; top: 55px;
+            position: absolute;
+            height: 55px width: 55px;
+        }
+
         .header{
             overflow: hidden;
             background-position: 0em 1.15em;
