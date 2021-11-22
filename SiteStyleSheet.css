@@ -20,7 +20,7 @@
             background-size: cover;
             background-size: fixed;
             background-position: center;
-            background-attachment: fixed;            
+            background-attachment: fixed;
             padding-top: 9.2em;
         }
         h1{
@@ -235,7 +235,7 @@
             display: none;
         }
         .left{
-            float: left;  
+            float: left;
 /*            margin-right: 1em;*/
             margin-right: 25px;
         }
@@ -244,7 +244,7 @@
         }
         .indent{
             margin-left: 25px;
-        }        
+        }
         .img{
             margin-left: 25px;
             margin-bottom: 25px;
@@ -277,7 +277,7 @@
             width: 100%;
             height: 100%;
             background: black;
-            opacity: 0;            
+            opacity: 0;
         }
         .overlay:hover:after{
             opacity: .5;
@@ -298,10 +298,10 @@
             font-size: 1em;
             font-style: italic;
         }
-        
+
         .TextColumn{
             padding: 100px;
-        }        
+        }
         .imageColumn{
             padding-top: 25px;
         }
@@ -324,7 +324,7 @@
             width: 100%;
             height: 20%;
             background: black;
-            opacity: 0;            
+            opacity: 0;
         }
         .bannerOverlay:hover:after{
             opacity: .5;
@@ -338,7 +338,8 @@
             width:307px;
             height:307px;
             margin-top: 50px;
-            background-image: url(images/profile_round_307x307.png);
+            /* background-image: url(images/profile_round_307x307.png); */
+            background-image: url(images/profile_pic_02.jpg);
             background-repeat: no-repeat;
             background-size: contain;
         }
@@ -346,9 +347,9 @@
         #resumeThumbnail{
 /*
             width:150px;
-            height: 210px;            
+            height: 210px;
 */
-            
+
             width:100px;
             height:139px;
 /*            margin-top: 50px;*/
