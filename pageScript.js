@@ -8,19 +8,19 @@
         var navAnimation = null;
         var previousFrame = null;
         var animationT = 0;
-                
-        
+        var page = "";
+
         //removes added hash from url
         function remove_hash() {
             history.replaceState("", document.title, window.location.pathname + window.location.search);
         }
-        
+
         //reterns a value between start and end values based on the 0-1 step value
         function Lerp(start, end, step){
             var output = step * (end - start) + start;
             return output;
         }
-        
+
         function SetNavState(compressed){
             if(isCompressed != null && compressed != isCompressed){
                 isCompressed = compressed;
@@ -29,48 +29,48 @@
                     clearInterval(navAnimation);
                     navAnimation = null;
                 }
-                
+
                 var speed = Math.abs(deltaPagePos * (currentScrollTime - prevScrollTime));
-                
+
                 totalAnimTime = (-1250 * speed) + 237.5;
-                
+
                 //limit
                 if(totalAnimTime < 50){
                     totalAnimTime = 50;
                 }else if(totalAnimTime > 200){
                     totalAnimTime = 200;
                 }
-                
-                
+
+
                 previousFrame = Date.now();
                 navAnimation = setInterval(function() {AnimateNavbar(compressed, totalAnimTime);}, 0);
             }
         }
-        
+
         function AnimateNavbar(isCompressing, totalAnimTime){
-            
+
             //in MILLIseconds
-        
+
             var directionFactor;
-            
+
             if(isCompressing){
                 directionFactor = 1;
             }else{
                 directionFactor = -1;
             }
 
-            
+
             var thisTime = Date.now();
             var deltaTime = (thisTime - previousFrame);
 
             previousFrame = thisTime;
-            
+
             //animate by delta time
             animationT = animationT + (deltaTime/totalAnimTime) * directionFactor;
-            
+
             //limit
             if(!isCompressing && animationT <= 0){
-                
+
                 animationT == 0;
                 CompressVertically(animationT);
 
@@ -82,28 +82,28 @@
             }else if(isCompressing > 0 && animationT >= 1){
                 animationT = 1;
                 CompressVertically(animationT);
-                
+
                 //end routine
                 clearInterval(navAnimation);
                 navAnimation = null;
 //                console.log("fully Compressed");
                 return;
             }
-            
+
             //apply
             CompressVertically(animationT);
-            
+
         }
-        
-        //vertically compresses all aspects of navbar based on the 0-1 inputed t/step value 
+
+        //vertically compresses all aspects of navbar based on the 0-1 inputed t/step value
         function CompressVertically(t){
-            
+
             if(t > 1){
                 t=1;
             }else if (t < 0){
                 t=0;
             }
-            
+
             //lerp values
             //.container-fluid.primary
             $(".container-fluid.primary").css("margin-top", Lerp(-0.4,-3.5,t) +"em");
@@ -141,14 +141,14 @@
             //.navbar
             $(".navbar").css("height", Lerp(11,6,t) +"em");
                 //height: 11em - 6em
-            
+
             //modify background alpha and shadow
             $(".navbar").css("background", "rgba(137,136,133," + (t * 0.95) +")");
             $(".navbar").css("box-shadow", "1.5px 3px 5px rgba(40, 40, 40," + (t * 0.09) + ")");
         }
-        
+
         //modifies the navbar based on scroll position
-        function modifyByScroll(){       
+        function modifyByScroll(){
             var s = $(window).scrollTop(),
             d = $(document).height();
 
@@ -157,13 +157,13 @@
             if(prevScrollTime == null){
                 currentScrollTime = Date.now();
                 prevScrollTime = currentScrollTime;
-                
+
             }else{
                 prevScrollTime = currentScrollTime;
                 currentScrollTime = Date.now();
             }
             deltaPagePos = pagePos - prevPage;
-            
+
             if(isNaN(pagePos)){
                 console.log("NAN");
                 SetNavState(false);
@@ -172,7 +172,7 @@
             {
                 //highlights/crossesOut the page section link based on the position on the page
                 highlightSection(pagePos,d);
-                
+
                 //limit t
                 if(isCompressed != null){
                     var t = 31.25 * pagePos;
@@ -181,35 +181,35 @@
                     }else if (t < 0.1){
                         SetNavState(false);
                     }
-                } 
+                }
             }
         }
-        
+
         //on page load sets starting navbar compression
         function setStartingNavState(){
             var t = 31.25 * pagePos;
             isCompressed = false;
             if(t >= 0.1){
-                t = 1; 
+                t = 1;
                 isCompressed = true;
             }else if (t < 0.1){
                 t = 0;
                 isCompressed = false;
             }
-            
+
             animationT = t;
             CompressVertically(t);
-            
+
             $(".navbar-default").removeClass("hidden");
         }
-        
+
         //switches between desktop and mobile navbar based on window width
         function mobileSwitch(){
             var w = $(document).width();
 //            console.log("width: " + w);
             var switchPoint = 1000;
             //if document width is lessthan or equal to certain amount
-            
+
             if(w <= switchPoint){
                 //add hidden class
                 $(".navbar-header").addClass("hidden");
@@ -222,26 +222,32 @@
                 $(".logo").removeClass("hidden");
             }
         }
-        
+
         //highlights section-links by position
         function highlightSection(pagePosition, docHeight){
             //link data stored in parrallel arrays
             // //id of link
             // var linkIDs = ["#projectInversionLink","#breakoutLink"];
             // //id of sections linked to
-            // var sectionIDs = ["#projectInversion","#breakout"];            
+            // var sectionIDs = ["#projectInversion","#breakout"];
 
-            //id of link     
-            var linkIDs = ["#link1","#link2"];
-            //id of sections linked to
-            var sectionIDs = ["#sect1","#sect2"];     
-
+            //id of link
+            var linkIDs;
+            var sectionIDs;
+            if(page == "Games.html"){
+              linkIDs = ["#link0","#link1","#link2"];
+              //id of sections linked to
+              sectionIDs = ["#sect0","#sect1","#sect2"];
+            }else{
+              linkIDs = ["#link1","#link2"];
+              sectionIDs = ["#sect1","#sect2"];
+            }
 
             var h = $(window).height();
             var bottomOfPage = pagePosition + (h/docHeight);
 //            console.log("pagePos: " + pagePosition);
 //            console.log("bottomOfPage: " +bottomOfPage);
-            
+
             if(pagePosition == 0){
                 //un-highlight all section links
                 for(i=0; i<linkIDs.length;i++){
@@ -253,11 +259,11 @@
                     if(i == linkIDs.length -1){
                         $(linkIDs[i]).addClass("currentSection");
                     }else{
-                        $(linkIDs[i]).removeClass("currentSection");   
+                        $(linkIDs[i]).removeClass("currentSection");
                     }
                 }
             }else{
-                
+
                 //fill elements
                 var elements = [];
                 var i;
@@ -277,24 +283,24 @@
                     //console.log(linkIDs[i] + ": " + ratio);
                     positions.push(ratio);
                 }
-                
-                
+
+
                 var currentSection = -1;
-                
+
                 for(i=0; i<positions.length;i++){
                     //if page position is bellow sectionPosition
                     //set highlightIndex to i
-                    
+
                     if(positions[i]<=0.004){
                         currentSection = i;
                     }
-                    
+
                     if(currentSection != -1 && currentSection != i){
                         //page position is within the highlightIndex
                         break;
                     }
                 }
-                
+
                 //highlight the currentSection
                 //un-highlight all others
                 for(i=0; i < linkIDs.length;i++){
@@ -307,7 +313,7 @@
                     }
                 }
             }
-            
+
         }
 
         //setcion link with offset and no url hash
@@ -319,15 +325,18 @@
             //move to hash position with offset of 100
             $(window).scrollTop($(hash).position().top - 100);
         })
-        
+
+        var path = window.location.pathname;
+        page = path.split("/").pop();
+
         modifyByScroll();
         setStartingNavState();
         mobileSwitch();
         window.addEventListener("resize",mobileSwitch);
         window.addEventListener("resize",modifyByScroll);
-        
+
         //run on document scroll
-        $(document).scroll(function() { 
+        $(document).scroll(function() {
 //            remove_hash();
             modifyByScroll();
         });
